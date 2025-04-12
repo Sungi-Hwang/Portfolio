@@ -224,43 +224,48 @@
     <!-- Grid Layout -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <!-- AI Project 1 -->
-      <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
-        <img src="images/brain_tumor.jpg" alt="뇌종양 분류 프로젝트" class="w-full h-80 object-cover">
-        <div class="p-5 space-y-2">
-          <h3 class="text-xl font-semibold text-teal-200">전이학습 기반 뇌종양 분류</h3>
-          <p class="text-sm text-gray-400">개발 인원: 1명 | 개발 기간: 2024.08 ~ 2024.10</p>
-          <p class="text-gray-300 text-sm">
-            MRI 데이터를 기반으로 ResNet50V2 모델을 활용한 전이학습 분류 모델을 구현.
-          </p>
-          <div class="text-sm space-x-4 mt-2">
-            <a href="#" target="_blank" class="text-teal-400 underline hover:text-teal-200">프로젝트 상세보기 (웹사이트로 이동)</a>
-            <a href="https://github.com/John-Yim" target="_blank" class="text-teal-400 underline hover:text-teal-200">코드보기 (GitHub로 이동)</a>
-          </div>
-          <!-- 보기 버튼 추가 -->
-          <div class="text-right mt-2">
-            <button onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')" id="btn-tumor" class="text-teal-400 hover:underline">보기 ▼</button>
-          </div>
+    <!-- AI Project 1 -->
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
+      <img src="images/brain_tumor.jpg" alt="뇌종양 분류 프로젝트" class="w-full h-80 object-cover">
+      <div class="p-5 space-y-2">
+        <h3 class="text-xl font-semibold text-teal-200">전이학습 기반 뇌종양 분류</h3>
+        <p class="text-sm text-gray-400">개발 인원: 1명 | 개발 기간: 2024.08 ~ 2024.10</p>
+        <p class="text-gray-300 text-sm">
+          MRI 데이터를 기반으로 ResNet50V2 모델을 활용한 전이학습 분류 모델을 구현.
+        </p>
+
+        <!-- 버튼 영역 -->
+        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
+          <a href="#" target="_blank" class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center">실행하기 (웹사이트로 이동)</a>
+          <a href="https://github.com/John-Yim" target="_blank" class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center">코드보기 (GitHub로 이동)</a>
+        </div>
+
+        <!-- 상세보기 버튼 -->
+        <div class="text-center mt-4">
+          <button onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')" id="btn-tumor" class="text-teal-400 hover:underline">상세보기 ▼</button>
         </div>
       </div>
+    </div>
 
-      <!-- AI Project 2 -->
-      <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
-        <img src="images/complain.png" alt="민원 분류 프로젝트" class="w-full h-80 object-cover">
-        <div class="p-5 space-y-2">
-          <h3 class="text-xl font-semibold text-teal-200">LLM 기반 민원 분류</h3>
-          <p class="text-sm text-gray-400">개발 인원: 1명 | 개발 기간: 2024.06 ~ 2024.07</p>
-          <p class="text-gray-300 text-sm">
-            민원 텍스트 데이터를 사용하여 민원 분류와 MCP 개발
-          </p>
-          <div class="text-sm space-x-4 mt-2">
-            <a href="#" target="_blank" class="text-teal-400 underline hover:text-teal-200">프로젝트 상세보기 (웹사이트로 이동)</a>
-            <a href="https://github.com/John-Yim" target="_blank" class="text-teal-400 underline hover:text-teal-200">코드보기 (GitHub로 이동)</a>
-          </div>
-          <!-- 보기 버튼 추가 -->
-          <div class="text-right mt-2">
-            <button onclick="toggleSectionWithFetch('llm', 'llm_project.html')" id="btn-llm" class="text-teal-400 hover:underline">보기 ▼</button>
-          </div>
+    <!-- AI Project 2 -->
+    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
+      <img src="images/complain.png" alt="민원 분류 프로젝트" class="w-full h-80 object-cover">
+      <div class="p-5 space-y-2">
+        <h3 class="text-xl font-semibold text-teal-200">LLM 기반 민원 분류</h3>
+        <p class="text-sm text-gray-400">개발 인원: 1명 | 개발 기간: 2024.06 ~ 2024.07</p>
+        <p class="text-gray-300 text-sm">
+          민원 텍스트 데이터를 사용하여 민원 분류와 MCP 개발
+        </p>
+
+        <!-- 버튼 영역 -->
+        <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
+          <a href="#" target="_blank" class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center">실행하기 (웹사이트로 이동)</a>
+          <a href="https://github.com/John-Yim" target="_blank" class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center">코드보기 (GitHub로 이동)</a>
+        </div>
+
+        <!-- 상세보기 버튼 -->
+        <div class="text-center mt-4">
+          <button onclick="toggleSectionWithFetch('llm', 'llm_project.html')" id="btn-llm" class="text-teal-400 hover:underline">상세보기 ▼</button>
         </div>
       </div>
     </div>
@@ -270,7 +275,7 @@
       <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
         <div id="content-tumor">로딩 중...</div>
         <div class="text-right mt-4">
-          <button onclick="toggleSectionWithFetch('tumor')" class="text-teal-400 hover:underline">보기 ▲</button>
+          <button onclick="toggleSectionWithFetch('tumor')" class="text-teal-400 hover:underline">닫기 ▲</button>
         </div>
       </div>
     </div>
@@ -279,7 +284,7 @@
       <div class="bg-gray-800 rounded-lg p-4 text-gray-100 text-sm leading-relaxed">
         <div id="content-llm">로딩 중...</div>
         <div class="text-right mt-4">
-          <button onclick="toggleSectionWithFetch('llm')" class="text-teal-400 hover:underline">보기 ▲</button>
+          <button onclick="toggleSectionWithFetch('llm')" class="text-teal-400 hover:underline">닫기 ▲</button>
         </div>
       </div>
     </div>
