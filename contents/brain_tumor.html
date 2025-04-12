@@ -7523,60 +7523,92 @@ a.anchor-link {
 <li><strong>프로젝트 개요</strong>: MRI 뇌 영상 데이터를 기반으로 딥러닝 모델을 활용해 <strong>뇌종양의 존재 여부 및 종류 분류</strong></li>
 </ul>
 <hr/>
+<h2 id="%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">✅ 최종 결과<a class="anchor-link" href="#%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">¶</a></h2><ul>
+<li><strong>최종 모델</strong>: ResNet50V2 기반 전이학습 모델 + 미세조정(Fine-tuning) 적용</li>
+<li><strong>정확도</strong>: 99%</li>
+<li><strong>Precision / Recall / F1-score</strong>: 모두 99% 수준</li>
+<li><strong>혼동 행렬 분석 결과</strong>: <strong>정상으로 잘못 예측된 뇌종양 없음</strong></li>
+</ul>
+<hr/>
 <h2 id="%F0%9F%93%82-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%A0%95%EB%B3%B4">📂 데이터셋 정보<a class="anchor-link" href="#%F0%9F%93%82-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%A0%95%EB%B3%B4">¶</a></h2><ul>
-<li><p><strong>출처</strong>: Kaggle의 <a href="https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data">Brain Tumor MRI Dataset</a> 공개 데이터셋 사용</p>
-</li>
-<li><p><strong>클래스 구성</strong>:</p>
-<ul>
+<li><strong>출처</strong>: Kaggle의 <a href="https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data">Brain Tumor MRI Dataset</a> 공개 데이터셋 사용</li>
+<li><strong>클래스 구성</strong>:<ul>
 <li><code>no_tumor</code>: 비종양 MRI 이미지</li>
 <li><code>glioma</code>: 신경교종 (가장 흔한 악성 뇌종양)</li>
 <li><code>meningioma</code>: 수막종 (두개 내 양성 종양)</li>
 <li><code>pituitary</code>: 뇌하수체 선종</li>
 </ul>
 </li>
-<li><p><strong>데이터 규모</strong>: 총 7,000장 이상의 MRI 이미지 (Train/Test 폴더 기준 분리)</p>
-</li>
-<li><p><strong>이미지 형태</strong>: 해상도 다양 (대부분 512x512)</p>
-</li>
-<li><p><strong>데이터 분할 방식</strong>:</p>
-<ul>
-<li>제공된 데이터셋은 <code>Training</code>, <code>Testing</code> 폴더로 구성되어 있으며,
-폴더 이름과 달리 <code>Testing</code> 폴더에도 라벨이 포함되어 있어 <strong>Validation 용도</strong>로 사용함</li>
-<li>본 프로젝트에서는 <code>Testing</code> 데이터를 <strong>성능 튜닝 및 평가에 사용</strong>하였고 <strong>최종 테스트는 별도 외부 데이터셋</strong>을 활용함</li>
+<li><strong>데이터 규모</strong>: 총 7,000장 이상의 MRI 이미지 (Train/Test 폴더 기준 분리)</li>
 </ul>
-</li>
-<li><p><strong>최종 테스트셋 출처</strong>:
-Kaggle의 <a href="https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri">Brain Tumor Classification (MRI)</a> 데이터셋을 사용하여 모델의 일반화 성능을 평가함</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>meningioma</th>
+<th>glioma</th>
+<th>notumor</th>
+<th>pituitary</th>
+<th>합계</th>
+<th>전체 비율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Train</strong></td>
+<td>1,339</td>
+<td>1,321</td>
+<td>1,595</td>
+<td>1,457</td>
+<td>5,712</td>
+<td>81.3%</td>
+</tr>
+<tr>
+<td><strong>Test</strong></td>
+<td>306</td>
+<td>300</td>
+<td>405</td>
+<td>300</td>
+<td>1,311</td>
+<td>18.7%</td>
+</tr>
+<tr>
+<td><strong>전체</strong></td>
+<td>1,645</td>
+<td>1,621</td>
+<td>2,000</td>
+<td>1,757</td>
+<td>7,023</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>데이터 분할 방식</strong>:<ul>
+<li>제공된 데이터셋은 <code>Training</code>, <code>Test</code> 폴더로 구성되어 있으며,
+<code>Test</code> 데이터를 <strong>Validation 용도</strong>로 사용함</li>
+</ul>
 </li>
 </ul>
 <table style="margin: 0; margin-bottom: 20px;">
 <tr>
-<td><img alt="No description has been provided for this image" src="../images/dataset_overview.png" style="width: 700px; height: auto;"/></td>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/brain_distribution.png" style="width: 700px; height: auto;"/></td>
 </tr>
 <tr>
-<td style="text-align: center;"><i>클래스별 MRI 이미지 시각화 예시</i></td>
+<td style="text-align: center;"><i>데이터 분포</i></td>
 </tr>
 </table>
-<hr/>
-<h2 id="%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">✅ 최종 결과<a class="anchor-link" href="#%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">¶</a></h2><ul>
-<li><p><strong>최종 모델</strong>: ResNet50V2 기반 전이학습 모델 + 미세조정(Fine-tuning) 적용</p>
-</li>
-<li><p><strong>정확도</strong>: 99%</p>
-</li>
-<li><p><strong>Precision / Recall / F1-score</strong>: 모두 99% 수준</p>
-</li>
-<li><p><strong>혼동 행렬 분석 결과</strong>: <strong>정상으로 잘못 예측된 뇌종양 없음</strong></p>
-</li>
-<li><p><strong>외부 테스트셋 평가 결과</strong>:</p>
 <ul>
-<li>Kaggle의 별도 Brain MRI Dataset을 활용하여 모델의 <strong>일반화 성능</strong> 평가</li>
-<li>정확도: <strong>99.48%</strong>, 손실률: <strong>0.0131</strong></li>
-<li>일부 클래스의 Precision, Recall이 <strong>소폭 감소</strong>하였으나,<br/>
-대부분의 클래스에서 <strong>F1-score는 여전히 1.00 수준 유지</strong></li>
-<li>실제 환경에서도 <strong>신뢰도 높은 성능을 유지함</strong>을 확인</li>
+<li><strong>이미지 형태</strong>: 해상도 다양 (대부분 512x512)</li>
 </ul>
-</li>
-</ul>
+<table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/brain_mri_ex.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>클래스별 이미지 예시</i></td>
+</tr>
+</table>
 <hr/>
 <h2 id="%F0%9F%9B%A0%EF%B8%8F-%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0">🛠️ 사용 기술<a class="anchor-link" href="#%F0%9F%9B%A0%EF%B8%8F-%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0">¶</a></h2><h3 id="%F0%9F%93%A6-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-&amp;-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC">📦 프레임워크 &amp; 라이브러리<a class="anchor-link" href="#%F0%9F%93%A6-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-&amp;-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC">¶</a></h3><ul>
 <li>TensorFlow / Keras</li>
@@ -7676,10 +7708,23 @@ Kaggle의 <a href="https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-cla
 <tr><td style="text-align: center;"><i>미세조정 후 성능지표</i></td></tr>
 </table>
 <hr/>
-<h2 id="%F0%9F%8E%AF-%EC%84%B1%EA%B3%BC">🎯 성과<a class="anchor-link" href="#%F0%9F%8E%AF-%EC%84%B1%EA%B3%BC">¶</a></h2><ul>
-<li>단순 정확도 외에 <strong>정밀도와 재현율까지 고려한 고성능 모델 개발</strong></li>
-<li>실무적인 관점에서 <strong>'사용할 수 있는 분류 모델'</strong>을 목표로 지속적인 실험 및 개선</li>
-<li>전이학습 + 미세조정의 조합으로 <strong>딥러닝 모델 성능 극대화</strong></li>
+<h2 id="%F0%9F%A7%A0-%EA%B2%B0%EB%A1%A0-%EB%B0%8F-%EA%B3%A0%EC%B0%B0">🧠 결론 및 고찰<a class="anchor-link" href="#%F0%9F%A7%A0-%EA%B2%B0%EB%A1%A0-%EB%B0%8F-%EA%B3%A0%EC%B0%B0">¶</a></h2><ul>
+<li><p>본 프로젝트에서는 단순 정확도 수치뿐 아니라 <strong>정밀도(Precision)</strong>, <strong>재현율(Recall)</strong> 등
+<strong>임상적으로 중요한 지표까지 고려한 고성능 분류 모델</strong>을 개발하였다.</p>
+</li>
+<li><p>실무적인 관점에서 <strong>‘실제로 사용할 수 있는 분류 모델’</strong>을 목표로
+전처리 개선, 구조 변경, 전이학습, 미세조정 등 다양한 시도를 통해 지속적으로 성능을 개선하였다.</p>
+</li>
+<li><p>특히, <strong>전이학습(Transfer Learning)</strong>과 <strong>Fine-tuning</strong>의 조합을 통해
+오분류가 중요한 의료 분야에서도 <strong>신뢰성 있는 분류 성능</strong>을 확보할 수 있었다.</p>
+</li>
+<li><p>향후에는 <strong>환자의 임상정보나 병기(예: 1기~4기)</strong>가 포함된 데이터를 활용하거나
+<strong>다중 분류</strong> 또는 <strong>순서형 분류</strong> 기법을 적용해
+뇌종양의 <strong>진행 단계 예측 모델</strong>로 확장할 수 있을 것으로 보인다.</p>
+</li>
+<li><p>단순 분류를 넘어서 <strong>종양의 위치를 시각적으로 표시하는 Object Detection 또는 Segmentation 모델</strong>을 활용하면
+뇌종양의 <strong>존재 위치 및 경계</strong>까지 시각적으로 제시하는 <strong>임상보조 진단 모델</strong>로의 확장도 가능 할 것으로 보인다.</p>
+</li>
 </ul>
 </div>
 </div>
