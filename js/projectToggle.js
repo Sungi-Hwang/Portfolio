@@ -10,7 +10,7 @@ function toggleSectionWithFetch(id, filePath) {
     if (sec === id) {
       const isOpen = !secDiv.classList.contains('hidden');
       secDiv.classList.toggle('hidden');
-      secBtn.innerText = isOpen ? '보기 ▼' : '보기 ▲';
+      secBtn.innerText = isOpen ? '상세보기 ▼' : '닫기 ▲';
 
       // ✅ fetch는 열릴 때만 실행 & 한 번만
       if (!isOpen && content && content.innerHTML.trim() === '로딩 중...' && filePath) {
@@ -21,7 +21,7 @@ function toggleSectionWithFetch(id, filePath) {
       }
     } else {
       document.getElementById(`section-${sec}`).classList.add('hidden');
-      document.getElementById(`btn-${sec}`).innerText = '보기 ▼';
+      document.getElementById(`btn-${sec}`).innerText = '상세보기 ▼';
     }
   });
 }
