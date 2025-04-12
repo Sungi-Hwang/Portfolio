@@ -7523,11 +7523,59 @@ a.anchor-link {
 <li><strong>프로젝트 개요</strong>: MRI 뇌 영상 데이터를 기반으로 딥러닝 모델을 활용해 <strong>뇌종양의 존재 여부 및 종류 분류</strong></li>
 </ul>
 <hr/>
+<h2 id="%F0%9F%93%82-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%A0%95%EB%B3%B4">📂 데이터셋 정보<a class="anchor-link" href="#%F0%9F%93%82-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%A0%95%EB%B3%B4">¶</a></h2><ul>
+<li><p><strong>출처</strong>: Kaggle의 <a href="https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset/data">Brain Tumor MRI Dataset</a> 공개 데이터셋 사용</p>
+</li>
+<li><p><strong>클래스 구성</strong>:</p>
+<ul>
+<li><code>no_tumor</code>: 비종양 MRI 이미지</li>
+<li><code>glioma</code>: 신경교종 (가장 흔한 악성 뇌종양)</li>
+<li><code>meningioma</code>: 수막종 (두개 내 양성 종양)</li>
+<li><code>pituitary</code>: 뇌하수체 선종</li>
+</ul>
+</li>
+<li><p><strong>데이터 규모</strong>: 총 7,000장 이상의 MRI 이미지 (Train/Test 폴더 기준 분리)</p>
+</li>
+<li><p><strong>이미지 형태</strong>: 해상도 다양 (대부분 512x512)</p>
+</li>
+<li><p><strong>데이터 분할 방식</strong>:</p>
+<ul>
+<li>제공된 데이터셋은 <code>Training</code>, <code>Testing</code> 폴더로 구성되어 있으며,
+폴더 이름과 달리 <code>Testing</code> 폴더에도 라벨이 포함되어 있어 <strong>Validation 용도</strong>로 사용함</li>
+<li>본 프로젝트에서는 <code>Testing</code> 데이터를 <strong>성능 튜닝 및 평가에 사용</strong>하였고 <strong>최종 테스트는 별도 외부 데이터셋</strong>을 활용함</li>
+</ul>
+</li>
+<li><p><strong>최종 테스트셋 출처</strong>:
+Kaggle의 <a href="https://www.kaggle.com/datasets/sartajbhuvaji/brain-tumor-classification-mri">Brain Tumor Classification (MRI)</a> 데이터셋을 사용하여 모델의 일반화 성능을 평가함</p>
+</li>
+</ul>
+<table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="../images/dataset_overview.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>클래스별 MRI 이미지 시각화 예시</i></td>
+</tr>
+</table>
+<hr/>
 <h2 id="%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">✅ 최종 결과<a class="anchor-link" href="#%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">¶</a></h2><ul>
-<li><strong>최종 모델</strong>: ResNet50V2 기반 전이학습 모델 + 미세조정(Fine-tuning) 적용</li>
-<li><strong>정확도</strong>: 99%</li>
-<li><strong>Precision / Recall / F1-score</strong>: 모두 99% 수준</li>
-<li><strong>혼동 행렬 분석 결과</strong>: <strong>정상으로 잘못 예측된 뇌종양 없음</strong></li>
+<li><p><strong>최종 모델</strong>: ResNet50V2 기반 전이학습 모델 + 미세조정(Fine-tuning) 적용</p>
+</li>
+<li><p><strong>정확도</strong>: 99%</p>
+</li>
+<li><p><strong>Precision / Recall / F1-score</strong>: 모두 99% 수준</p>
+</li>
+<li><p><strong>혼동 행렬 분석 결과</strong>: <strong>정상으로 잘못 예측된 뇌종양 없음</strong></p>
+</li>
+<li><p><strong>외부 테스트셋 평가 결과</strong>:</p>
+<ul>
+<li>Kaggle의 별도 Brain MRI Dataset을 활용하여 모델의 <strong>일반화 성능</strong> 평가</li>
+<li>정확도: <strong>99.48%</strong>, 손실률: <strong>0.0131</strong></li>
+<li>일부 클래스의 Precision, Recall이 <strong>소폭 감소</strong>하였으나,<br/>
+대부분의 클래스에서 <strong>F1-score는 여전히 1.00 수준 유지</strong></li>
+<li>실제 환경에서도 <strong>신뢰도 높은 성능을 유지함</strong>을 확인</li>
+</ul>
+</li>
 </ul>
 <hr/>
 <h2 id="%F0%9F%9B%A0%EF%B8%8F-%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0">🛠️ 사용 기술<a class="anchor-link" href="#%F0%9F%9B%A0%EF%B8%8F-%EC%82%AC%EC%9A%A9-%EA%B8%B0%EC%88%A0">¶</a></h2><h3 id="%F0%9F%93%A6-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-&amp;-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC">📦 프레임워크 &amp; 라이브러리<a class="anchor-link" href="#%F0%9F%93%A6-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-&amp;-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC">¶</a></h3><ul>
