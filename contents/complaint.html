@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>complain</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>complain_classification</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7312,7 +7312,6 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
-                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7517,7 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="%F0%9F%93%8C-%EB%AF%BC%EC%9B%90-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B6%84%EB%A5%98-%EB%B0%8F-%EC%A0%95%EB%B6%80-%EB%B6%80%EC%B2%98-%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C">🏛️ 민원 텍스트 분류 및 정부 부처 추천 시스템<a class="anchor-link" href="#%F0%9F%93%8C-%EB%AF%BC%EC%9B%90-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B6%84%EB%A5%98-%EB%B0%8F-%EC%A0%95%EB%B6%80-%EB%B6%80%EC%B2%98-%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C">¶</a></h1><hr/>
+<h1 id="%F0%9F%8F%9B%EF%B8%8F-%EB%AF%BC%EC%9B%90-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B6%84%EB%A5%98-%EB%B0%8F-%EC%A0%95%EB%B6%80-%EB%B6%80%EC%B2%98-%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C">🏛️ 민원 텍스트 분류 및 정부 부처 추천 시스템<a class="anchor-link" href="#%F0%9F%8F%9B%EF%B8%8F-%EB%AF%BC%EC%9B%90-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B6%84%EB%A5%98-%EB%B0%8F-%EC%A0%95%EB%B6%80-%EB%B6%80%EC%B2%98-%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C">¶</a></h1><hr/>
 <h2 id="%F0%9F%A7%BE-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A0%95%EB%B3%B4">🧾 프로젝트 정보<a class="anchor-link" href="#%F0%9F%A7%BE-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A0%95%EB%B3%B4">¶</a></h2><ul>
 <li><strong>진행기간</strong>: 2025.03 ~ 진행 중</li>
 <li><strong>참여 형태</strong>: 개인 프로젝트 (기획, 전처리, 모델링, 배포까지 단독 수행)</li>
@@ -7527,17 +7526,129 @@ a.anchor-link {
 </ul>
 <hr/>
 <h2 id="%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">✅ 최종 결과<a class="anchor-link" href="#%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">¶</a></h2><ul>
-<li><strong>최종 모델</strong>: <code>beomi/KcELECTRA-base</code></li>
-<li><strong>정확도</strong>: 93.32%</li>
-<li><strong>Precision / Recall / F1 Score</strong>: 약 93% 이상 (Macro 평균 기준)</li>
+<li><strong>최종 모델</strong>: <code>skt/KcELECTRA-base</code></li>
+<li><strong>정확도</strong>: 93.84%</li>
+<li><strong>Precision / Recall / F1 Score</strong>: 약 92% 이상 (Macro 평균 기준)</li>
 </ul>
+<blockquote>
+<p>클래스 불균형에도 불구하고 전반적으로 높은 성능을 보임</p>
+</blockquote>
+<h2 id="%F0%9F%94%A5-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%B3%84-%EC%84%B1%EB%8A%A5-%EC%9A%94%EC%95%BD">🔥 클래스별 성능 요약<a class="anchor-link" href="#%F0%9F%94%A5-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%B3%84-%EC%84%B1%EB%8A%A5-%EC%9A%94%EC%95%BD">¶</a></h2><h3 id="%E2%9C%85-%EC%84%B1%EB%8A%A5-%EC%9A%B0%EC%88%98-%ED%81%B4%EB%9E%98%EC%8A%A4-(F1-score-%E2%89%A5-0.95)">✅ 성능 우수 클래스 (F1-score ≥ 0.95)<a class="anchor-link" href="#%E2%9C%85-%EC%84%B1%EB%8A%A5-%EC%9A%B0%EC%88%98-%ED%81%B4%EB%9E%98%EC%8A%A4-(F1-score-%E2%89%A5-0.95)">¶</a></h3><table>
+<thead>
+<tr>
+<th>클래스</th>
+<th>F1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상하수도</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>세무</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>자동차</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>농업_축산</td>
+<td>0.97</td>
+</tr>
+<tr>
+<td>환경미화</td>
+<td>0.95</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%E2%9A%A0%EF%B8%8F-%EB%B3%B4%ED%86%B5-%EC%84%B1%EB%8A%A5-%ED%81%B4%EB%9E%98%EC%8A%A4-(0.85-%E2%89%A4-F1-score-%3C-0.95)">⚠️ 보통 성능 클래스 (0.85 ≤ F1-score &lt; 0.95)<a class="anchor-link" href="#%E2%9A%A0%EF%B8%8F-%EB%B3%B4%ED%86%B5-%EC%84%B1%EB%8A%A5-%ED%81%B4%EB%9E%98%EC%8A%A4-(0.85-%E2%89%A4-F1-score-%3C-0.95)">¶</a></h3><table>
+<thead>
+<tr>
+<th>클래스</th>
+<th>F1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>건축허가</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>경제</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>교통</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>문화_체육_관광</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>보건소</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>복지</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>산림</td>
+<td>0.87</td>
+</tr>
+<tr>
+<td>안전건설</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>위생</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>정보통신</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>토지</td>
+<td>0.87</td>
+</tr>
+<tr>
+<td>행정</td>
+<td>0.85</td>
+</tr>
+</tbody>
+</table>
+<h3 id="%F0%9F%94%BB-%EA%B0%9C%EC%84%A0-%ED%95%84%EC%9A%94-%ED%81%B4%EB%9E%98%EC%8A%A4-(F1-score-%3C-0.85)">🔻 개선 필요 클래스 (F1-score &lt; 0.85)<a class="anchor-link" href="#%F0%9F%94%BB-%EA%B0%9C%EC%84%A0-%ED%95%84%EC%9A%94-%ED%81%B4%EB%9E%98%EC%8A%A4-(F1-score-%3C-0.85)">¶</a></h3><table>
+<thead>
+<tr>
+<th>클래스</th>
+<th>F1-score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>없음</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<ul>
+<li><strong>샘플 많은 클래스:</strong> <code>자동차</code>, <code>교통</code>, <code>환경미화</code></li>
+<li><strong>샘플 적은 클래스:</strong> <code>정보통신</code>, <code>토지</code>, <code>경제</code></li>
+</ul>
+<p>→ 클래스 불균형 상황에서도 <strong>전반적으로 고른 성능 확보</strong><br/>
+→ 일부 모호한 클래스(<code>행정</code>, <code>토지</code>) 제외하면 대부분 0.90 이상 유지</p>
 <hr/>
 <h2 id="%F0%9F%93%82-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%A0%95%EB%B3%B4">📂 데이터셋 정보<a class="anchor-link" href="#%F0%9F%93%82-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%A0%95%EB%B3%B4">¶</a></h2><ul>
 <li><strong>출처</strong>: AI-Hub의 민원 업무화 인공지능 언어 데이터 사용</li>
 <li><strong>형식</strong>: JSON (<code>원천데이터</code>, <code>라벨링데이터</code>로 분리 제공)</li>
 <li><strong>구성요소</strong>:<ul>
 <li>원천데이터: <code>id</code>, <code>text</code></li>
-<li>라벨링데이터: <code>id</code>, <code>category</code>, <code>subcategory</code>, <code>prediction</code>, <code>department</code>, <code>Q_refined</code>...외 다수</li>
+<li>라벨링데이터: <code>id</code>, <code>category</code>, <code>subcategory</code>, <code>prediction</code>, <code>department</code>, <code>Q_refined</code>... 다수</li>
 </ul>
 </li>
 <li><strong>데이터 형태 변환</strong><ul>
@@ -7568,7 +7679,6 @@ a.anchor-link {
 <li>AWS EC2 (배포 예정)</li>
 </ul>
 <h3 id="%F0%9F%A7%A0-%EB%AA%A8%EB%8D%B8%EB%A7%81-%EA%B8%B0%EB%B2%95">🧠 모델링 기법<a class="anchor-link" href="#%F0%9F%A7%A0-%EB%AA%A8%EB%8D%B8%EB%A7%81-%EA%B8%B0%EB%B2%95">¶</a></h3><ul>
-<li>전이학습 (Transfer Learning)</li>
 <li>BERT 계열 사전학습 모델 활용 (KoBERT, KcBERT, KcELECTRA)</li>
 <li>Fine-tuning + EarlyStopping</li>
 <li>TF-IDF + LightGBM (Baseline)</li>
@@ -7617,12 +7727,9 @@ a.anchor-link {
 </table>
 <p>→ <code>최빈 category</code> 기준으로 정제</p>
 <ol start="3">
-<li><strong>Validation 데이터셋 비율 불균형</strong><ul>
-<li>전처리 과정에서 Validation 데이터의 비율이 지나치게 작아져, 모델 성능 평가의 신뢰도가 낮아지는 문제가 발생.</li>
-</ul>
-</li>
-</ol>
-<table style="margin: 0; margin-bottom: 20px;">
+<li><p><strong>Validation 데이터셋 비율 불균형</strong></p>
+<ul>
+<li>전처리 과정에서 Validation 데이터의 비율이 지나치게 작아져, 모델 성능 평가의 신뢰도가 낮아지는 문제가 발생.<table style="margin: 0; margin-bottom: 20px;">
 <tr>
 <td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/before_merge_ratio.png" style="width: 700px; height: auto;"/></td>
 </tr>
@@ -7630,7 +7737,7 @@ a.anchor-link {
 <td style="text-align: center;"><i>병합 전 Train/Validation 비율</i></td>
 </tr>
 </table>
-   → Train 데이터에 10%를 기존 Validation 데이터에 병합(stratify옵션을 사용하여 클래스 비율 유지한 채로 분할)
+→ Train 데이터에 10%를 기존 Validation 데이터에 병합(stratify옵션을 사용하여 클래스 비율 유지한 채로 분할)
 <table style="margin: 0; margin-bottom: 20px;">
 <tr>
 <td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/after_merge_ratio.png" style="width: 700px; height: auto;"/></td>
@@ -7639,29 +7746,599 @@ a.anchor-link {
 <td style="text-align: center;"><i>병합 후 Train/Validation 비율</i></td>
 </tr>
 </table>
-<ol start="3">
-<li><p><strong>Baseline 모델(LightGBM) 성능 저조</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Baseline 모델(LightGBM) 성능 저조</strong>
+📊 LightGBM Classification Report (정확도: 0.6151)</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>클래스</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-score</th>
+<th>Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>건축허가</td>
+<td>0.56</td>
+<td>0.58</td>
+<td>0.57</td>
+<td>3,659</td>
+</tr>
+<tr>
+<td>경제</td>
+<td>0.58</td>
+<td>0.46</td>
+<td>0.51</td>
+<td>1,102</td>
+</tr>
+<tr>
+<td>공통</td>
+<td>0.33</td>
+<td>0.15</td>
+<td>0.20</td>
+<td>3,344</td>
+</tr>
+<tr>
+<td>교통</td>
+<td>0.62</td>
+<td>0.52</td>
+<td>0.57</td>
+<td>12,158</td>
+</tr>
+<tr>
+<td>농업_축산</td>
+<td>0.68</td>
+<td>0.50</td>
+<td>0.57</td>
+<td>1,386</td>
+</tr>
+<tr>
+<td>문화_체육_관광</td>
+<td>0.45</td>
+<td>0.37</td>
+<td>0.40</td>
+<td>1,448</td>
+</tr>
+<tr>
+<td>보건소</td>
+<td>0.59</td>
+<td>0.53</td>
+<td>0.56</td>
+<td>1,112</td>
+</tr>
+<tr>
+<td>복지</td>
+<td>0.51</td>
+<td>0.45</td>
+<td>0.48</td>
+<td>1,389</td>
+</tr>
+<tr>
+<td>산림</td>
+<td>0.43</td>
+<td>0.38</td>
+<td>0.41</td>
+<td>1,306</td>
+</tr>
+<tr>
+<td>상하수도</td>
+<td>0.75</td>
+<td>0.64</td>
+<td>0.69</td>
+<td>2,518</td>
+</tr>
+<tr>
+<td>세무</td>
+<td>0.78</td>
+<td>0.79</td>
+<td>0.78</td>
+<td>1,199</td>
+</tr>
+<tr>
+<td>안전건설</td>
+<td>0.42</td>
+<td>0.66</td>
+<td>0.52</td>
+<td>6,519</td>
+</tr>
+<tr>
+<td>위생</td>
+<td>0.59</td>
+<td>0.57</td>
+<td>0.58</td>
+<td>1,462</td>
+</tr>
+<tr>
+<td>자동차</td>
+<td>0.75</td>
+<td>0.91</td>
+<td>0.82</td>
+<td>15,246</td>
+</tr>
+<tr>
+<td>정보통신</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>147</td>
+</tr>
+<tr>
+<td>토지</td>
+<td>0.31</td>
+<td>0.32</td>
+<td>0.31</td>
+<td>379</td>
+</tr>
+<tr>
+<td>행정</td>
+<td>0.32</td>
+<td>0.31</td>
+<td>0.31</td>
+<td>1,152</td>
+</tr>
+<tr>
+<td>환경미화</td>
+<td>0.74</td>
+<td>0.57</td>
+<td>0.65</td>
+<td>5,617</td>
+</tr>
+</tbody>
+</table>
+<p>📈 전체 성능 지표</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td>0.6151</td>
+</tr>
+<tr>
+<td>Macro Avg Precision</td>
+<td>0.52</td>
+</tr>
+<tr>
+<td>Macro Avg Recall</td>
+<td>0.48</td>
+</tr>
+<tr>
+<td>Macro Avg F1-score</td>
+<td>0.50</td>
+</tr>
+<tr>
+<td>Weighted Avg Precision</td>
+<td>0.61</td>
+</tr>
+<tr>
+<td>Weighted Avg Recall</td>
+<td>0.62</td>
+</tr>
+<tr>
+<td>Weighted Avg F1-score</td>
+<td>0.60</td>
+</tr>
+</tbody>
+</table>
+<p>🔢 LightGBM 혼동행렬</p>
+<table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/lightgbm_cm.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>LightGBM Confusion Maxtrix</i></td>
+</tr>
+</table>
 <ul>
 <li>정확도 61%, 클래스 간 혼동 큼
 → 전이학습 기반 모델로 전환</li>
 </ul>
-</li>
-<li><p><strong>전이학습 모델 선정 과정</strong></p>
-<ul>
-<li>KoBERT, KcBERT, KcELECTRA 비교</li>
-<li>KcELECTRA가 가장 빠르고 성능 유사 → 최종 채택</li>
-<li>Epoch 100, Patience 10 설정 → 최종 정확도 94% 달성</li>
+<ol start="4">
+<li><strong>전이학습 모델 선정 과정</strong><ul>
+<li>KoBERT(skt), RoBERTa(klue), KcELECTRA(beomi) 비교</li>
 </ul>
 </li>
-<li><p><strong>2차 분류 시도 중 문제점 발견 (department 불균형)</strong></p>
+</ol>
+<p>📊 KoBERT(skt) Classification Report (정확도: 0.9384)</p>
+<table>
+<thead>
+<tr>
+<th>클래스</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-score</th>
+<th>Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>건축허가</td>
+<td>0.93</td>
+<td>0.92</td>
+<td>0.93</td>
+<td>3,659</td>
+</tr>
+<tr>
+<td>경제</td>
+<td>0.92</td>
+<td>0.95</td>
+<td>0.93</td>
+<td>1,102</td>
+</tr>
+<tr>
+<td>공통</td>
+<td>0.87</td>
+<td>0.84</td>
+<td>0.85</td>
+<td>3,344</td>
+</tr>
+<tr>
+<td>교통</td>
+<td>0.94</td>
+<td>0.93</td>
+<td>0.94</td>
+<td>12,158</td>
+</tr>
+<tr>
+<td>농업_축산</td>
+<td>0.98</td>
+<td>0.95</td>
+<td>0.97</td>
+<td>1,386</td>
+</tr>
+<tr>
+<td>문화_체육_관광</td>
+<td>0.94</td>
+<td>0.92</td>
+<td>0.93</td>
+<td>1,448</td>
+</tr>
+<tr>
+<td>보건소</td>
+<td>0.90</td>
+<td>0.95</td>
+<td>0.93</td>
+<td>1,112</td>
+</tr>
+<tr>
+<td>복지</td>
+<td>0.93</td>
+<td>0.94</td>
+<td>0.93</td>
+<td>1,389</td>
+</tr>
+<tr>
+<td>산림</td>
+<td>0.87</td>
+<td>0.87</td>
+<td>0.87</td>
+<td>1,306</td>
+</tr>
+<tr>
+<td>상하수도</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.97</td>
+<td>2,518</td>
+</tr>
+<tr>
+<td>세무</td>
+<td>0.98</td>
+<td>0.96</td>
+<td>0.97</td>
+<td>1,199</td>
+</tr>
+<tr>
+<td>안전건설</td>
+<td>0.91</td>
+<td>0.93</td>
+<td>0.92</td>
+<td>6,519</td>
+</tr>
+<tr>
+<td>위생</td>
+<td>0.94</td>
+<td>0.90</td>
+<td>0.92</td>
+<td>1,462</td>
+</tr>
+<tr>
+<td>자동차</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.97</td>
+<td>15,246</td>
+</tr>
+<tr>
+<td>정보통신</td>
+<td>0.97</td>
+<td>0.87</td>
+<td>0.92</td>
+<td>147</td>
+</tr>
+<tr>
+<td>토지</td>
+<td>0.91</td>
+<td>0.82</td>
+<td>0.87</td>
+<td>379</td>
+</tr>
+<tr>
+<td>행정</td>
+<td>0.84</td>
+<td>0.87</td>
+<td>0.85</td>
+<td>1,152</td>
+</tr>
+<tr>
+<td>환경미화</td>
+<td>0.96</td>
+<td>0.95</td>
+<td>0.95</td>
+<td>5,617</td>
+</tr>
+</tbody>
+</table>
+<p>📈 전체 성능 지표</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td>0.9384</td>
+</tr>
+<tr>
+<td>Macro Avg Precision</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>Macro Avg Recall</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>Macro Avg F1-score</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>Weighted Avg Precision</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>Weighted Avg Recall</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>Weighted Avg F1-score</td>
+<td>0.94</td>
+</tr>
+</tbody>
+</table>
+<table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/skt_acc_loss.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>KoBERT(skt) 정확도 및 손실률</i></td>
+</tr>
+</table>
+<p>📊 RoBERTa(klue) Classification Report (정확도: 0.6151)</p>
+<table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/klue_acc_loss.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>RoBERTa(klue) 정확도 및 손실률</i></td>
+</tr>
+</table>
+<p>📊 KcELECTRA(beomi) Classification Report (정확도: 0.9332)</p>
+<table>
+<thead>
+<tr>
+<th>클래스</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-score</th>
+<th>Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>건축허가</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>0.93</td>
+<td>3,659</td>
+</tr>
+<tr>
+<td>경제</td>
+<td>0.91</td>
+<td>0.93</td>
+<td>0.92</td>
+<td>1,102</td>
+</tr>
+<tr>
+<td>공통</td>
+<td>0.81</td>
+<td>0.82</td>
+<td>0.81</td>
+<td>3,344</td>
+</tr>
+<tr>
+<td>교통</td>
+<td>0.95</td>
+<td>0.93</td>
+<td>0.94</td>
+<td>12,158</td>
+</tr>
+<tr>
+<td>농업_축산</td>
+<td>0.98</td>
+<td>0.91</td>
+<td>0.95</td>
+<td>1,386</td>
+</tr>
+<tr>
+<td>문화_체육_관광</td>
+<td>0.87</td>
+<td>0.94</td>
+<td>0.90</td>
+<td>1,448</td>
+</tr>
+<tr>
+<td>보건소</td>
+<td>0.94</td>
+<td>0.91</td>
+<td>0.93</td>
+<td>1,112</td>
+</tr>
+<tr>
+<td>복지</td>
+<td>0.94</td>
+<td>0.91</td>
+<td>0.93</td>
+<td>1,389</td>
+</tr>
+<tr>
+<td>산림</td>
+<td>0.88</td>
+<td>0.82</td>
+<td>0.85</td>
+<td>1,306</td>
+</tr>
+<tr>
+<td>상하수도</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.97</td>
+<td>2,518</td>
+</tr>
+<tr>
+<td>세무</td>
+<td>0.97</td>
+<td>0.97</td>
+<td>0.97</td>
+<td>1,199</td>
+</tr>
+<tr>
+<td>안전건설</td>
+<td>0.91</td>
+<td>0.93</td>
+<td>0.92</td>
+<td>6,519</td>
+</tr>
+<tr>
+<td>위생</td>
+<td>0.90</td>
+<td>0.93</td>
+<td>0.92</td>
+<td>1,462</td>
+</tr>
+<tr>
+<td>자동차</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.97</td>
+<td>15,246</td>
+</tr>
+<tr>
+<td>정보통신</td>
+<td>0.93</td>
+<td>0.84</td>
+<td>0.89</td>
+<td>147</td>
+</tr>
+<tr>
+<td>토지</td>
+<td>0.82</td>
+<td>0.88</td>
+<td>0.85</td>
+<td>379</td>
+</tr>
+<tr>
+<td>행정</td>
+<td>0.86</td>
+<td>0.80</td>
+<td>0.83</td>
+<td>1,152</td>
+</tr>
+<tr>
+<td>환경미화</td>
+<td>0.96</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>5,617</td>
+</tr>
+</tbody>
+</table>
+<p>📈 전체 성능 지표</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accuracy</td>
+<td>0.9332</td>
+</tr>
+<tr>
+<td>Macro Avg Precision</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>Macro Avg Recall</td>
+<td>0.91</td>
+</tr>
+<tr>
+<td>Macro Avg F1-score</td>
+<td>0.91</td>
+</tr>
+<tr>
+<td>Weighted Avg Precision</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>Weighted Avg Recall</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>Weighted Avg F1-score</td>
+<td>0.93</td>
+</tr>
+</tbody>
+</table>
+<table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/beomi_acc_loss.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>KcELECTRA(beomi) 정확도 및 손실률</i></td>
+</tr>
+</table>
 <ul>
-<li><code>val</code>에만 존재하는 부서가 다수</li>
-<li><code>text</code> 내 주소 정보가 <code>@#주소@#</code> 등으로 블러 처리되어 있어 부서 매핑 불가
-→ department 분류 모델 제외</li>
+<li>3개의 모델 모두 정확도는 93%로 유사</li>
+<li>KoBERT(skt)가 성능지표에서 소폭 우세 = 성능 안정석 측면에서 더 유리함 → 최종 채택</li>
 </ul>
-</li>
-<li><p><strong>MCP 알고리즘 개발</strong></p>
-<ul>
+<ol start="5">
+<li><strong>MCP 알고리즘 개발</strong><ul>
 <li>예측된 category를 기반으로 중앙정부 부처 정보(JSON)와 매핑</li>
 <li>홈페이지 / 전화번호 자동 제공</li>
 <li>Flask 웹서버에 모델과 함께 통합 예정</li>
@@ -7669,12 +8346,11 @@ a.anchor-link {
 </li>
 </ol>
 <hr/>
-<h2 id="%F0%9F%A7%A0-%EC%84%B1%EA%B3%BC-%EB%B0%8F-%EA%B3%A0%EC%B0%B0">🧠 성과 및 고찰<a class="anchor-link" href="#%F0%9F%A7%A0-%EC%84%B1%EA%B3%BC-%EB%B0%8F-%EA%B3%A0%EC%B0%B0">¶</a></h2><ul>
-<li>정확도 94% 이상의 실용 가능한 텍스트 분류 모델 구축</li>
-<li>데이터 품질 개선이 모델 성능 향상에 핵심적 역할</li>
-<li>단순 분류에서 나아가 실제 <strong>정부 민원 안내 시스템에 활용 가능한 구조 설계</strong></li>
-<li>현재 Flask 기반 웹 배포 및 부처 정보 연결 기능 통합 중</li>
-<li>향후 지역 주소 기반 부서 분류 확장, LLM 기반 민원 응답 자동화 가능성 확인</li>
+<h2 id="%F0%9F%A7%A0-%EA%B2%B0%EB%A1%A0-%EB%B0%8F-%EA%B3%A0%EC%B0%B0">🧠 결론 및 고찰<a class="anchor-link" href="#%F0%9F%A7%A0-%EA%B2%B0%EB%A1%A0-%EB%B0%8F-%EA%B3%A0%EC%B0%B0">¶</a></h2><ul>
+<li>본 프로젝트는 <code>skt/KcELECTRA-base</code> 모델과 전이학습 기법을 활용해, 민원 텍스트를 18개 카테고리로 분류하고 예측 결과에 따라 중앙정부 부처의 홈페이지 및 전화번호를 자동 제공하는 실용적인 시스템을 구현하였다.</li>
+<li>단순한 분류 성능을 넘어서, <strong>MCP</strong> 알고리즘을 통해 민원 → 카테고리 → 담당 부처 정보 제공으로 이어지는 구조를 설계함으로써 공공서비스 자동화의 가능성을 확인하였다.</li>
+<li>다만 일부 모호한 클래스(예: 공통, 행정 등)에서의 혼동과, 중앙정부에 한정된 적용 범위, 라벨링 기준의 주관성 등 몇 가지 한계점도 존재하였다.</li>
+<li>향후에는 문장 의미 기반 분류 고도화, 소수 클래스 데이터 보강, 지방자치단체 정보 연계, 신뢰도 시각화 등의 기능을 추가함으로써 <strong>정확성과 실용성을 모두 갖춘 공공 AI 시스템</strong>으로 확장할 수 있을 것으로 보인다.</li>
 </ul>
 </div>
 </div>
