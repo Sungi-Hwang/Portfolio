@@ -55,6 +55,26 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
 <style type="text/css">
+
+/* .head(3) 가로 스크롤 생성 */
+.dataframe {
+  display: block;       /* 블록 요소로 변경 */
+  overflow-x: auto;     /* 가로 스크롤 허용 */
+  max-width: 100%;      /* 부모 영역보다 커지면 스크롤바 생성 */
+}
+/* 마크다운 테이블 왼쪽 정렬 */
+table {
+  margin: 0 !important;       /* 왼쪽 정렬 */
+  /* 혹은 margin-left: 0; margin-right: auto; 로 지정 */
+}
+/* 코드 작성 부분 가로 스크롤 생성 */
+.cm-editor.cm-s-jupyter {
+  display: block;        /* inline 상태면 overflow 적용 안 될 수 있음 */
+  overflow-x: auto;      /* 가로 스크롤 허용 */
+  white-space: pre;      /* 코드가 줄바꿈 없이 한 줄로 유지 */
+  max-width: 100%;       /* 부모보다 커지면 스크롤바 생성 */
+}
+    
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
