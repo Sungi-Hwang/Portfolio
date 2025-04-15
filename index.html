@@ -208,10 +208,7 @@
 <!-- 카드 2개 영역 -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Project 1 -->
-
-<!-- Project 2 -->
-
-<div class="relative"><div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
+<div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
 <img alt="뇌종양 분류 프로젝트" class="w-full h-80 object-cover" src="images/brain_tumor.jpg"/>
 <div class="p-5 space-y-2">
 <h3 class="text-xl font-semibold text-teal-200">전이학습 기반 뇌종양 분류</h3>
@@ -233,14 +230,16 @@
 <button class="text-teal-400 hover:underline" id="btn-tumor" onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')">상세보기 ▼</button>
 </div>
 </div>
-</div><div class="absolute left-0 top-full mt-2 z-10 hidden w-full md:w-[calc(200%+1.5rem)] md:-ml-[calc(100%+0.75rem)] project-detail bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-tumor">
+</div><div class="project-detail hidden col-span-full md:col-span-2 w-full mt-4 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-tumor">
 <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
 <div id="content-tumor">로딩 중...</div>
 <div class="text-right mt-4">
 <button class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('tumor')">닫기 ▲</button>
 </div>
 </div>
-</div></div><div class="relative"><div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
+</div>
+<!-- Project 2 -->
+<div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
 <img alt="민원 분류 프로젝트" class="w-full h-80 object-cover" src="images/complaint.png"/>
 <div class="p-5 space-y-2">
 <h3 class="text-xl font-semibold text-teal-200">민원 텍스트 분류 및 정부 부처 정보 추천 시스템</h3>
@@ -262,14 +261,15 @@
 <button class="text-teal-400 hover:underline" id="btn-llm" onclick="toggleSectionWithFetch('llm', 'contents/complaint.html')">상세보기 ▼</button>
 </div>
 </div>
-</div><div class="absolute left-0 top-full mt-2 z-10 hidden w-full md:w-[calc(200%+1.5rem)] md:-ml-[calc(100%+0.75rem)] project-detail bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-llm">
+</div><div class="project-detail hidden col-span-full md:col-span-2 w-full mt-4 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-llm">
 <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
 <div id="content-llm">로딩 중...</div>
 <div class="text-right mt-4">
 <button class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('llm')">닫기 ▲</button>
 </div>
 </div>
-</div></div></div>
+</div>
+</div>
 <!-- 상세 내용: tumor -->
 
 <!-- 상세 내용: llm -->
