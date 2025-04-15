@@ -230,7 +230,7 @@
 <button class="text-teal-400 hover:underline" id="btn-tumor" onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')">상세보기 ▼</button>
 </div>
 </div>
-</div><div class="project-detail hidden col-span-full md:col-span-2 w-full mt-4 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-tumor">
+</div><div class="project-detail col-span-full md:col-span-2 w-full mt-4 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-tumor" style="display: none;">
 <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
 <div id="content-tumor">로딩 중...</div>
 <div class="text-right mt-4">
@@ -261,7 +261,7 @@
 <button class="text-teal-400 hover:underline" id="btn-llm" onclick="toggleSectionWithFetch('llm', 'contents/complaint.html')">상세보기 ▼</button>
 </div>
 </div>
-</div><div class="project-detail hidden col-span-full md:col-span-2 w-full mt-4 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-llm">
+</div><div class="project-detail col-span-full md:col-span-2 w-full mt-4 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-llm" style="display: none;">
 <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
 <div id="content-llm">로딩 중...</div>
 <div class="text-right mt-4">
@@ -271,9 +271,7 @@
 </div>
 </div>
 <!-- 상세 내용: tumor -->
-
 <!-- 상세 내용: llm -->
-
 </section>
 <!-- Awards -->
 <section class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition">
