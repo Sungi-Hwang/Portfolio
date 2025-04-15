@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>complain_classification</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -55,6 +55,26 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .il { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Integer.Long */
   </style>
 <style type="text/css">
+
+  /* .head(3) 가로 스크롤 생성 */
+  .dataframe {
+    display: block;       /* 블록 요소로 변경 */
+    overflow-x: auto;     /* 가로 스크롤 허용 */
+    max-width: 100%;      /* 부모 영역보다 커지면 스크롤바 생성 */
+  }
+  /* 마크다운 테이블 왼쪽 정렬 */
+  table {
+    margin: 0 !important;       /* 왼쪽 정렬 */
+    /* 혹은 margin-left: 0; margin-right: auto; 로 지정 */
+  }
+  /* 코드 작성 부분 가로 스크롤 생성 */
+  .cm-editor.cm-s-jupyter {
+    display: block;        /* inline 상태면 overflow 적용 안 될 수 있음 */
+    overflow-x: auto;      /* 가로 스크롤 허용 */
+    white-space: pre;      /* 코드가 줄바꿈 없이 한 줄로 유지 */
+    max-width: 100%;       /* 부모보다 커지면 스크롤바 생성 */
+  }
+
 /*-----------------------------------------------------------------------------
 | Copyright (c) Jupyter Development Team.
 | Distributed under the terms of the Modified BSD License.
@@ -7518,11 +7538,11 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="%F0%9F%8F%9B%EF%B8%8F-%EB%AF%BC%EC%9B%90-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B6%84%EB%A5%98-%EB%B0%8F-%EC%A0%95%EB%B6%80-%EB%B6%80%EC%B2%98-%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C">🏛️ 민원 텍스트 분류 및 정부 부처 추천 시스템<a class="anchor-link" href="#%F0%9F%8F%9B%EF%B8%8F-%EB%AF%BC%EC%9B%90-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%B6%84%EB%A5%98-%EB%B0%8F-%EC%A0%95%EB%B6%80-%EB%B6%80%EC%B2%98-%EC%B6%94%EC%B2%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C">¶</a></h1><hr/>
 <h2 id="%F0%9F%A7%BE-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A0%95%EB%B3%B4">🧾 프로젝트 정보<a class="anchor-link" href="#%F0%9F%A7%BE-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%A0%95%EB%B3%B4">¶</a></h2><ul>
-<li><strong>진행기간</strong>: 2025.03 ~ 진행 중</li>
-<li><strong>참여 형태</strong>: 개인 프로젝트 (기획, 전처리, 모델링, 배포까지 단독 수행)</li>
-<li><strong>프로젝트 개요</strong>:<br/>
-사용자가 입력한 민원 텍스트를 18개 카테고리로 분류한 뒤, 예측된 카테고리에 맞는 중앙정부 부처의 <strong>홈페이지 및 전화번호를 자동으로 제공</strong>하는 시스템을 개발.
-전이학습 기반 NLP 모델을 통해 민원 카테고리를 분류하고 예측 결과를 바탕으로 관련 부처의 정보(홈페이지, 전화번호)를 제공하는 <strong>MCP(Model Context Protocol)</strong> 알고리즘 설계.</li>
+<li><strong>진행기간</strong>: 2025.02 ~ 2025.04</li>
+<li><strong>참여 형태</strong>: 개인 프로젝트</li>
+<li><strong>프로젝트 개요</strong>:
+사용자가 입력한 민원 텍스트를 18개 카테고리로 분류하는 자연어 처리 시스템
+전이학습 기반의 한국어 BERT 계열 모델들을 비교 실험하여 최적 성능의 분류 모델을 도출하고 예측된 카테고리에 맞는 중앙정부 부처의 <strong>홈페이지 및 대표 전화번호 정보를 제공</strong>하는 기능을 포함하고 있음.</li>
 </ul>
 <hr/>
 <h2 id="%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">✅ 최종 결과<a class="anchor-link" href="#%E2%9C%85-%EC%B5%9C%EC%A2%85-%EA%B2%B0%EA%B3%BC">¶</a></h2><ul>
@@ -7644,14 +7664,14 @@ a.anchor-link {
 → 일부 모호한 클래스(<code>행정</code>, <code>토지</code>) 제외하면 대부분 0.90 이상 유지</p>
 <hr/>
 <h2 id="%F0%9F%93%82-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%A0%95%EB%B3%B4">📂 데이터셋 정보<a class="anchor-link" href="#%F0%9F%93%82-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EC%A0%95%EB%B3%B4">¶</a></h2><ul>
-<li><strong>출처</strong>: AI-Hub의 민원 업무화 인공지능 언어 데이터 사용</li>
+<li><strong>출처</strong>: AIHub의 <a href="https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&amp;topMenu=100&amp;dataSetSn=619">민원 업무 자동화 인공지능 언어 데이터</a> 사용</li>
 <li><strong>형식</strong>: JSON (<code>원천데이터</code>, <code>라벨링데이터</code>로 분리 제공)</li>
 <li><strong>구성요소</strong>:<ul>
 <li>원천데이터: <code>id</code>, <code>text</code></li>
 <li>라벨링데이터: <code>id</code>, <code>category</code>, <code>subcategory</code>, <code>prediction</code>, <code>department</code>, <code>Q_refined</code>... 다수</li>
 </ul>
 </li>
-<li><strong>데이터 형태 변환</strong><ul>
+<li><strong>JSON -&gt; csv 형태 변환</strong><ul>
 <li>원천데이터_train/val.csv</li>
 <li>라벨링데이터_train/val.csv</li>
 </ul>
@@ -7669,25 +7689,19 @@ a.anchor-link {
 <li>Pandas / Numpy</li>
 <li>Matplotlib / Seaborn</li>
 <li>Scikit-learn</li>
-<li>Flask</li>
 </ul>
 <h3 id="%F0%9F%92%BB-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD">💻 개발 환경<a class="anchor-link" href="#%F0%9F%92%BB-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD">¶</a></h3><ul>
-<li>Python 3.x</li>
+<li>Python</li>
 <li>Jupyter Notebook</li>
 <li>VSCode</li>
-<li>Google Colab (T4 GPU)</li>
-<li>AWS EC2 (배포 예정)</li>
 </ul>
 <h3 id="%F0%9F%A7%A0-%EB%AA%A8%EB%8D%B8%EB%A7%81-%EA%B8%B0%EB%B2%95">🧠 모델링 기법<a class="anchor-link" href="#%F0%9F%A7%A0-%EB%AA%A8%EB%8D%B8%EB%A7%81-%EA%B8%B0%EB%B2%95">¶</a></h3><ul>
+<li>TF-IDF + LightGBM (Baseline)</li>
 <li>BERT 계열 사전학습 모델 활용 (KoBERT, KcBERT, KcELECTRA)</li>
 <li>Fine-tuning + EarlyStopping</li>
-<li>TF-IDF + LightGBM (Baseline)</li>
 </ul>
 <hr/>
-<h2 id="%F0%9F%A7%A9-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%EB%B0%8F-%EA%B0%9C%EC%84%A0-%EA%B3%BC%EC%A0%95">🧩 트러블 슈팅 및 개선 과정<a class="anchor-link" href="#%F0%9F%A7%A9-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%EB%B0%8F-%EA%B0%9C%EC%84%A0-%EA%B3%BC%EC%A0%95">¶</a></h2><ol>
-<li><strong>데이터 병합</strong></li>
-</ol>
-<table style="margin: 0; margin-bottom: 20px;">
+<h2 id="%F0%9F%A7%A9-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%EB%B0%8F-%EA%B0%9C%EC%84%A0-%EA%B3%BC%EC%A0%95">🧩 트러블 슈팅 및 개선 과정<a class="anchor-link" href="#%F0%9F%A7%A9-%ED%8A%B8%EB%9F%AC%EB%B8%94-%EC%8A%88%ED%8C%85-%EB%B0%8F-%EA%B0%9C%EC%84%A0-%EA%B3%BC%EC%A0%95">¶</a></h2><h3 id="1.-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%91%ED%95%A9">1. <strong>데이터 병합</strong><a class="anchor-link" href="#1.-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%91%ED%95%A9">¶</a></h3><table style="margin: 0; margin-bottom: 20px;">
 <tr>
 <td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/complaint_id_venn.png" style="width: 700px; height: auto;"/></td>
 </tr>
@@ -7700,12 +7714,9 @@ a.anchor-link {
 <li><code>train</code>에는 있는데 <code>val</code>에는 없는 샘플 / 반대도 존재
 → <code>inner join</code>으로 정합성 확보</li>
 </ul>
-<ol start="2">
-<li><strong>데이터 중복 문제</strong><ul>
+<h3 id="2.-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A4%91%EB%B3%B5-%EB%AC%B8%EC%A0%9C">2. <strong>데이터 중복 문제</strong><a class="anchor-link" href="#2.-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A4%91%EB%B3%B5-%EB%AC%B8%EC%A0%9C">¶</a></h3><ul>
 <li>동일한 <code>text</code>를 가진 데이터 존재</li>
 </ul>
-</li>
-</ol>
 <table style="margin: 0; margin-bottom: 20px;">
 <tr>
 <td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/text_dup.png" style="width: 700px; height: auto;"/></td>
@@ -7726,9 +7737,7 @@ a.anchor-link {
 </tr>
 </table>
 <p>→ <code>최빈 category</code> 기준으로 정제</p>
-<ol start="3">
-<li><p><strong>Validation 데이터셋 비율 불균형</strong></p>
-<ul>
+<h3 id="3.-Validation-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EB%B9%84%EC%9C%A8-%EB%B6%88%EA%B7%A0%ED%98%95">3. <strong>Validation 데이터셋 비율 불균형</strong><a class="anchor-link" href="#3.-Validation-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-%EB%B9%84%EC%9C%A8-%EB%B6%88%EA%B7%A0%ED%98%95">¶</a></h3><ul>
 <li>전처리 과정에서 Validation 데이터의 비율이 지나치게 작아져, 모델 성능 평가의 신뢰도가 낮아지는 문제가 발생.<table style="margin: 0; margin-bottom: 20px;">
 <tr>
 <td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/before_merge_ratio.png" style="width: 700px; height: auto;"/></td>
@@ -7737,7 +7746,7 @@ a.anchor-link {
 <td style="text-align: center;"><i>병합 전 Train/Validation 비율</i></td>
 </tr>
 </table>
-→ Train 데이터에 10%를 기존 Validation 데이터에 병합(stratify옵션을 사용하여 클래스 비율 유지한 채로 분할)
+   → Train 데이터에 10%를 기존 Validation 데이터에 병합(stratify옵션을 사용하여 클래스 비율 유지한 채로 분할)
 <table style="margin: 0; margin-bottom: 20px;">
 <tr>
 <td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/after_merge_ratio.png" style="width: 700px; height: auto;"/></td>
@@ -7748,12 +7757,7 @@ a.anchor-link {
 </table>
 </li>
 </ul>
-</li>
-<li><p><strong>Baseline 모델(LightGBM) 성능 저조</strong>
-📊 LightGBM Classification Report (정확도: 0.6151)</p>
-</li>
-</ol>
-<table>
+<h3 id="4.-Baseline-%EB%AA%A8%EB%8D%B8(LightGBM)-%EC%84%B1%EB%8A%A5-%EC%A0%80%EC%A1%B0">4. <strong>Baseline 모델(LightGBM) 성능 저조</strong><a class="anchor-link" href="#4.-Baseline-%EB%AA%A8%EB%8D%B8(LightGBM)-%EC%84%B1%EB%8A%A5-%EC%A0%80%EC%A1%B0">¶</a></h3><h4 id="%F0%9F%93%8A-LightGBM-Classification-Report-(%EC%A0%95%ED%99%95%EB%8F%84:-0.6151)">📊 LightGBM Classification Report (정확도: 0.6151)<a class="anchor-link" href="#%F0%9F%93%8A-LightGBM-Classification-Report-(%EC%A0%95%ED%99%95%EB%8F%84:-0.6151)">¶</a></h4><table>
 <thead>
 <tr>
 <th>클래스</th>
@@ -7892,8 +7896,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p>📈 전체 성능 지표</p>
-<table>
+<h4 id="LightGBM-%EC%A0%84%EC%B2%B4-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C">LightGBM 전체 성능 지표<a class="anchor-link" href="#LightGBM-%EC%A0%84%EC%B2%B4-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C">¶</a></h4><table>
 <thead>
 <tr>
 <th>Metric</th>
@@ -7931,8 +7934,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p>🔢 LightGBM 혼동행렬</p>
-<table style="margin: 0; margin-bottom: 20px;">
+<h4 id="%F0%9F%94%A2-LightGBM-Confusion-Matrix">🔢 LightGBM Confusion Matrix<a class="anchor-link" href="#%F0%9F%94%A2-LightGBM-Confusion-Matrix">¶</a></h4><table style="margin: 0; margin-bottom: 20px;">
 <tr>
 <td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/lightgbm_cm.png" style="width: 700px; height: auto;"/></td>
 </tr>
@@ -7944,14 +7946,18 @@ a.anchor-link {
 <li>정확도 61%, 클래스 간 혼동 큼
 → 전이학습 기반 모델로 전환</li>
 </ul>
-<ol start="4">
-<li><strong>전이학습 모델 선정 과정</strong><ul>
+<h3 id="5.-%EC%A0%84%EC%9D%B4%ED%95%99%EC%8A%B5-%EB%AA%A8%EB%8D%B8-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90">5. <strong>전이학습 모델 성능 비교</strong><a class="anchor-link" href="#5.-%EC%A0%84%EC%9D%B4%ED%95%99%EC%8A%B5-%EB%AA%A8%EB%8D%B8-%EC%84%B1%EB%8A%A5-%EB%B9%84%EA%B5%90">¶</a></h3><ul>
 <li>KoBERT(skt), RoBERTa(klue), KcELECTRA(beomi) 비교</li>
 </ul>
-</li>
-</ol>
-<p>📊 KoBERT(skt) Classification Report (정확도: 0.9384)</p>
-<table>
+<h4 id="%F0%9F%93%88-KoBERT(skt)-(%EC%A0%95%ED%99%95%EB%8F%84:-0.9384)">📈 KoBERT(skt) (정확도: 0.9384)<a class="anchor-link" href="#%F0%9F%93%88-KoBERT(skt)-(%EC%A0%95%ED%99%95%EB%8F%84:-0.9384)">¶</a></h4><table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/skt_acc_loss.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>KoBERT(skt) 정확도 및 손실률</i></td>
+</tr>
+</table>
+<h4 id="%F0%9F%93%8A-KoBERT(skt)-Classification-Report">📊 KoBERT(skt) Classification Report<a class="anchor-link" href="#%F0%9F%93%8A-KoBERT(skt)-Classification-Report">¶</a></h4><table>
 <thead>
 <tr>
 <th>클래스</th>
@@ -8090,8 +8096,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p>📈 전체 성능 지표</p>
-<table>
+<h4 id="KoBERT(skt)-%EC%A0%84%EC%B2%B4-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C">KoBERT(skt) 전체 성능 지표<a class="anchor-link" href="#KoBERT(skt)-%EC%A0%84%EC%B2%B4-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C">¶</a></h4><table>
 <thead>
 <tr>
 <th>Metric</th>
@@ -8099,10 +8104,6 @@ a.anchor-link {
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Accuracy</td>
-<td>0.9384</td>
-</tr>
 <tr>
 <td>Macro Avg Precision</td>
 <td>0.93</td>
@@ -8129,16 +8130,15 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<table style="margin: 0; margin-bottom: 20px;">
+<h4 id="%F0%9F%94%A2-KoBERT(skt)-Confusion-Matrix">🔢 KoBERT(skt) Confusion Matrix<a class="anchor-link" href="#%F0%9F%94%A2-KoBERT(skt)-Confusion-Matrix">¶</a></h4><table style="margin: 0; margin-bottom: 20px;">
 <tr>
-<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/skt_acc_loss.png" style="width: 700px; height: auto;"/></td>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/skt_cm.png" style="width: 700px; height: auto;"/></td>
 </tr>
 <tr>
-<td style="text-align: center;"><i>KoBERT(skt) 정확도 및 손실률</i></td>
+<td style="text-align: center;"><i>KoBERT(skt) Confusion Matrix</i></td>
 </tr>
 </table>
-<p>📊 RoBERTa(klue) Classification Report (정확도: 0.6151)</p>
-<table style="margin: 0; margin-bottom: 20px;">
+<h4 id="%F0%9F%93%88-RoBERTa(klue)-(%EC%A0%95%ED%99%95%EB%8F%84:-0.9393)">📈 RoBERTa(klue) (정확도: 0.9393)<a class="anchor-link" href="#%F0%9F%93%88-RoBERTa(klue)-(%EC%A0%95%ED%99%95%EB%8F%84:-0.9393)">¶</a></h4><table style="margin: 0; margin-bottom: 20px;">
 <tr>
 <td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/klue_acc_loss.png" style="width: 700px; height: auto;"/></td>
 </tr>
@@ -8146,8 +8146,196 @@ a.anchor-link {
 <td style="text-align: center;"><i>RoBERTa(klue) 정확도 및 손실률</i></td>
 </tr>
 </table>
-<p>📊 KcELECTRA(beomi) Classification Report (정확도: 0.9332)</p>
-<table>
+<h4 id="%F0%9F%93%8A-RoBERTa(klue)-Classification-Report">📊 RoBERTa(klue) Classification Report<a class="anchor-link" href="#%F0%9F%93%8A-RoBERTa(klue)-Classification-Report">¶</a></h4><table>
+<thead>
+<tr>
+<th>클래스</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-score</th>
+<th>Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>건축허가</td>
+<td>0.93</td>
+<td>0.94</td>
+<td>0.93</td>
+<td>3659</td>
+</tr>
+<tr>
+<td>경제</td>
+<td>0.93</td>
+<td>0.95</td>
+<td>0.94</td>
+<td>1102</td>
+</tr>
+<tr>
+<td>공통</td>
+<td>0.86</td>
+<td>0.81</td>
+<td>0.84</td>
+<td>3344</td>
+</tr>
+<tr>
+<td>교통</td>
+<td>0.96</td>
+<td>0.92</td>
+<td>0.94</td>
+<td>12158</td>
+</tr>
+<tr>
+<td>농업_축산</td>
+<td>0.97</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>1386</td>
+</tr>
+<tr>
+<td>문화_체육_관광</td>
+<td>0.92</td>
+<td>0.94</td>
+<td>0.93</td>
+<td>1448</td>
+</tr>
+<tr>
+<td>보건소</td>
+<td>0.94</td>
+<td>0.91</td>
+<td>0.93</td>
+<td>1112</td>
+</tr>
+<tr>
+<td>복지</td>
+<td>0.94</td>
+<td>0.94</td>
+<td>0.94</td>
+<td>1389</td>
+</tr>
+<tr>
+<td>산림</td>
+<td>0.89</td>
+<td>0.88</td>
+<td>0.88</td>
+<td>1306</td>
+</tr>
+<tr>
+<td>상하수도</td>
+<td>0.97</td>
+<td>0.98</td>
+<td>0.97</td>
+<td>2518</td>
+</tr>
+<tr>
+<td>세무</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.97</td>
+<td>1199</td>
+</tr>
+<tr>
+<td>안전건설</td>
+<td>0.90</td>
+<td>0.94</td>
+<td>0.92</td>
+<td>6519</td>
+</tr>
+<tr>
+<td>위생</td>
+<td>0.91</td>
+<td>0.93</td>
+<td>0.92</td>
+<td>1462</td>
+</tr>
+<tr>
+<td>자동차</td>
+<td>0.96</td>
+<td>0.98</td>
+<td>0.97</td>
+<td>15246</td>
+</tr>
+<tr>
+<td>정보통신</td>
+<td>0.97</td>
+<td>0.84</td>
+<td>0.90</td>
+<td>147</td>
+</tr>
+<tr>
+<td>토지</td>
+<td>0.90</td>
+<td>0.83</td>
+<td>0.86</td>
+<td>379</td>
+</tr>
+<tr>
+<td>행정</td>
+<td>0.81</td>
+<td>0.86</td>
+<td>0.84</td>
+<td>1152</td>
+</tr>
+<tr>
+<td>환경미화</td>
+<td>0.96</td>
+<td>0.95</td>
+<td>0.96</td>
+<td>5617</td>
+</tr>
+</tbody>
+</table>
+<h4 id="RoBERTa(klue)-%EC%A0%84%EC%B2%B4-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C">RoBERTa(klue) 전체 성능 지표<a class="anchor-link" href="#RoBERTa(klue)-%EC%A0%84%EC%B2%B4-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C">¶</a></h4><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Macro Avg Precision</td>
+<td>0.93</td>
+</tr>
+<tr>
+<td>Macro Avg Recall</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>Macro Avg F1-score</td>
+<td>0.92</td>
+</tr>
+<tr>
+<td>Weighted Avg Precision</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>Weighted Avg Recall</td>
+<td>0.94</td>
+</tr>
+<tr>
+<td>Weighted Avg F1-score</td>
+<td>0.94</td>
+</tr>
+</tbody>
+</table>
+<h4 id="%F0%9F%94%A2-RoBERTa(klue)-Confusion-Matrix">🔢 RoBERTa(klue) Confusion Matrix<a class="anchor-link" href="#%F0%9F%94%A2-RoBERTa(klue)-Confusion-Matrix">¶</a></h4><table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/klue_cm.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>RoBERTa(klue) Confusion Matrix</i></td>
+</tr>
+</table>
+<h4 id="%F0%9F%93%88-KcELECTRA(beomi)-(%EC%A0%95%ED%99%95%EB%8F%84:-0.9332)">📈 KcELECTRA(beomi) (정확도: 0.9332)<a class="anchor-link" href="#%F0%9F%93%88-KcELECTRA(beomi)-(%EC%A0%95%ED%99%95%EB%8F%84:-0.9332)">¶</a></h4><table style="margin: 0; margin-bottom: 20px;">
+<tr>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/beomi_acc_loss.png" style="width: 700px; height: auto;"/></td>
+</tr>
+<tr>
+<td style="text-align: center;"><i>KcELECTRA(beomi) 정확도 및 손실률</i></td>
+</tr>
+</table>
+<h4 id="%F0%9F%93%8A-KcELECTRA(beomi)-Classification-Report">📊 KcELECTRA(beomi) Classification Report<a class="anchor-link" href="#%F0%9F%93%8A-KcELECTRA(beomi)-Classification-Report">¶</a></h4><table>
 <thead>
 <tr>
 <th>클래스</th>
@@ -8286,8 +8474,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<p>📈 전체 성능 지표</p>
-<table>
+<h4 id="KcELECTRA(beomi)-%EC%A0%84%EC%B2%B4-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C">KcELECTRA(beomi) 전체 성능 지표<a class="anchor-link" href="#KcELECTRA(beomi)-%EC%A0%84%EC%B2%B4-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C">¶</a></h4><table>
 <thead>
 <tr>
 <th>Metric</th>
@@ -8295,10 +8482,6 @@ a.anchor-link {
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Accuracy</td>
-<td>0.9332</td>
-</tr>
 <tr>
 <td>Macro Avg Precision</td>
 <td>0.92</td>
@@ -8325,30 +8508,22 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<table style="margin: 0; margin-bottom: 20px;">
+<h4 id="%F0%9F%94%A2-KcELECTRA(beomi)-Confusion-Matrix">🔢 KcELECTRA(beomi) Confusion Matrix<a class="anchor-link" href="#%F0%9F%94%A2-KcELECTRA(beomi)-Confusion-Matrix">¶</a></h4><table style="margin: 0; margin-bottom: 20px;">
 <tr>
-<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/beomi_acc_loss.png" style="width: 700px; height: auto;"/></td>
+<td><img alt="No description has been provided for this image" src="https://john-yim.github.io/portfolio/images/beomi_cm.png" style="width: 700px; height: auto;"/></td>
 </tr>
 <tr>
-<td style="text-align: center;"><i>KcELECTRA(beomi) 정확도 및 손실률</i></td>
+<td style="text-align: center;"><i>KcELECTRA(beomi) Confusion Matrix</i></td>
 </tr>
 </table>
 <ul>
 <li>3개의 모델 모두 정확도는 93%로 유사</li>
 <li>KoBERT(skt)가 성능지표에서 소폭 우세 = 성능 안정석 측면에서 더 유리함 → 최종 채택</li>
 </ul>
-<ol start="5">
-<li><strong>MCP 알고리즘 개발</strong><ul>
-<li>예측된 category를 기반으로 중앙정부 부처 정보(JSON)와 매핑</li>
-<li>홈페이지 / 전화번호 자동 제공</li>
-<li>Flask 웹서버에 모델과 함께 통합 예정</li>
-</ul>
-</li>
-</ol>
 <hr/>
 <h2 id="%F0%9F%A7%A0-%EA%B2%B0%EB%A1%A0-%EB%B0%8F-%EA%B3%A0%EC%B0%B0">🧠 결론 및 고찰<a class="anchor-link" href="#%F0%9F%A7%A0-%EA%B2%B0%EB%A1%A0-%EB%B0%8F-%EA%B3%A0%EC%B0%B0">¶</a></h2><ul>
-<li>본 프로젝트는 <code>skt/KcELECTRA-base</code> 모델과 전이학습 기법을 활용해, 민원 텍스트를 18개 카테고리로 분류하고 예측 결과에 따라 중앙정부 부처의 홈페이지 및 전화번호를 자동 제공하는 실용적인 시스템을 구현하였다.</li>
-<li>단순한 분류 성능을 넘어서, <strong>MCP</strong> 알고리즘을 통해 민원 → 카테고리 → 담당 부처 정보 제공으로 이어지는 구조를 설계함으로써 공공서비스 자동화의 가능성을 확인하였다.</li>
+<li>본 프로젝트는 <code>skt/KcELECTRA-base</code> 모델과 전이학습 기법을 활용해, 민원 텍스트를 18개 카테고리로 분류하고 예측 결과에 따라 중앙정부 부처의 홈페이지 및 전화번호를 자동 제공하는 시스템을 구현하였다.</li>
+<li>다양한 전이학습 모델을 비교 실험하고 정부 부처 정보를 활용해 예측된 카테고리에 맞는 대표 홈페이지 및 전화번호 정보를 제공함으로써 <strong>민원 응답 시스템의 형태</strong>를 구현하였다.</li>
 <li>다만 일부 모호한 클래스(예: 공통, 행정 등)에서의 혼동과, 중앙정부에 한정된 적용 범위, 라벨링 기준의 주관성 등 몇 가지 한계점도 존재하였다.</li>
 <li>향후에는 문장 의미 기반 분류 고도화, 소수 클래스 데이터 보강, 지방자치단체 정보 연계, 신뢰도 시각화 등의 기능을 추가함으로써 <strong>정확성과 실용성을 모두 갖춘 공공 AI 시스템</strong>으로 확장할 수 있을 것으로 보인다.</li>
 </ul>
