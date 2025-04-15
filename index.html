@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>YongGyun's Portfolio</title>
+  <title>AI Engineer Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html {
@@ -109,7 +109,7 @@
             </tr>
           </thead>
           <tbody class="text-sm">
-            <!-- 각 Skill 내용은 그대로 유지 -->
+            <!-- 각 Skill 항목은 그대로 유지 -->
             <tr>
               <td class="font-medium text-teal-400">Language</td>
               <td>
@@ -203,12 +203,12 @@
     </section>
     
     <!-- Projects -->
-    <section class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition">
+    <!-- Projects 섹션 전체를 relative로 감쌉니다 -->
+    <section class="relative bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition">
       <h2 class="text-2xl font-semibold text-teal-300 mb-4">Projects</h2>
-      <!-- 카드 2개 영역 -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Project 1: 뇌종양 분류 프로젝트 (수정된 버전) -->
-        <div class="relative bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
+        <!-- Project 1: 뇌종양 분류 프로젝트 -->
+        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
           <img alt="뇌종양 분류 프로젝트" class="w-full h-80 object-cover" src="images/brain_tumor.jpg"/>
           <div class="p-5 space-y-2">
             <h3 class="text-xl font-semibold text-teal-200">전이학습 기반 뇌종양 분류</h3>
@@ -216,7 +216,6 @@
             <p class="text-gray-300 text-sm">
               MRI 뇌 영상 데이터를 기반으로 딥러닝 모델을 활용해 뇌종양의 존재 여부 및 종류 분류
             </p>
-            <!-- 버튼들 -->
             <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
               <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center" href="https://huggingface.co/spaces/JohnYim0213/project-note" target="_blank">
                 실행하기 (HuggingFace로 이동)
@@ -225,23 +224,13 @@
                 코드보기 (GitHub로 이동)
               </a>
             </div>
-            <!-- 상세보기 버튼 -->
             <div class="text-center mt-4">
               <button class="text-teal-400 hover:underline" id="btn-tumor" onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')">상세보기 ▼</button>
             </div>
           </div>
-          <!-- 뇌종양 상세 내용 (오버레이) -->
-          <div class="project-detail absolute inset-0 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed z-10" id="section-tumor" style="display: none;">
-            <div class="p-4">
-              <div id="content-tumor">로딩 중...</div>
-              <div class="text-right mt-4">
-                <button class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('tumor')">닫기 ▲</button>
-              </div>
-            </div>
-          </div>
         </div>
         
-        <!-- Project 2: 민원 분류 프로젝트 (기존 방식 유지) -->
+        <!-- Project 2: 민원 분류 프로젝트 (기존 방식 그대로) -->
         <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
           <img alt="민원 분류 프로젝트" class="w-full h-80 object-cover" src="images/complaint.png"/>
           <div class="p-5 space-y-2">
@@ -250,7 +239,6 @@
             <p class="text-gray-300 text-sm">
               사용자가 입력한 민원 텍스트를 18개 카테고리로 분류한 뒤, 예측된 카테고리에 맞는 중앙정부부처 정보를 제공
             </p>
-            <!-- 버튼들 -->
             <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
               <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center" href="https://huggingface.co/spaces/JohnYim0213/project-note" target="_blank">
                 실행하기 (HuggingFace로 이동)
@@ -259,19 +247,29 @@
                 코드보기 (GitHub로 이동)
               </a>
             </div>
-            <!-- 상세보기 버튼 -->
             <div class="text-center mt-4">
               <button class="text-teal-400 hover:underline" id="btn-llm" onclick="toggleSectionWithFetch('llm', 'contents/complaint.html')">상세보기 ▼</button>
             </div>
           </div>
         </div>
-        <!-- 민원 상세 내용 (별도 그리드 아이템, 그대로 유지) -->
-        <div class="project-detail col-span-full md:col-span-2 w-full mt-4 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-llm" style="display: none;">
-          <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
-            <div id="content-llm">로딩 중...</div>
-            <div class="text-right mt-4">
-              <button class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('llm')">닫기 ▲</button>
-            </div>
+      </div>
+      
+      <!-- 뇌종양 상세 내용 overlay (풀폭, 절대 위치) -->
+      <div id="section-tumor" class="absolute left-0 right-0 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed z-20" style="display:none; top:calc(100% + 1rem);">
+        <div class="p-4">
+          <div id="content-tumor">로딩 중...</div>
+          <div class="text-right mt-4">
+            <button class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('tumor')">닫기 ▲</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 민원 상세 내용 (기존 방식, 그리드 아이템으로 남겨둠) -->
+      <div class="project-detail col-span-full md:col-span-2 w-full mt-4 bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed" id="section-llm" style="display: none;">
+        <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
+          <div id="content-llm">로딩 중...</div>
+          <div class="text-right mt-4">
+            <button class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('llm')">닫기 ▲</button>
           </div>
         </div>
       </div>
@@ -336,6 +334,8 @@
   <footer class="text-center text-sm text-gray-500 py-6">
     © 2025 Yim YongGyun. All rights reserved.
   </footer>
+  
+  <!-- 기존 projectToggle.js 파일 호출 (toggleSectionWithFetch 함수 사용) -->
   <script src="js/projectToggle.js"></script>
 </body>
 </html>
