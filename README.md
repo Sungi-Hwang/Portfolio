@@ -1,4 +1,4 @@
-# ✨ [John Yim의 포트폴리오](https://john-yg-yim.github.io/portfolio/)
+# ✨ [John Yim의 포트폴리오](https://john-yim.github.io/portfolio/)
 
 환영합니다!  
 이곳은 임용균의 포트폴리오 레포지토리입니다.  
