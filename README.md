@@ -17,7 +17,7 @@
 
 | 프로젝트 | 설명 | 링크 |
 |----------|------|------|
-| **Kaggle Competition BirdCLEF+2025** | 자연 환경에서 녹음된 60초 사운드스케이프에서 206종의 야생 동물 소리를 탐지 및 분류 | [🔗 데모](https://huggingface.co/spaces/JohnYim0213/BirdCLEF) / [📂 코드](https://github.com/John-yg-Yim/BirdCLEF-2025) |
+| **Kaggle Competition BirdCLEF+2025** | 자연 환경에서 녹음된 60초 사운드스케이프에서 206종의 야생 동물 소리를 탐지 및 분류 | [🔗 데모](https://huggingface.co/spaces/JohnYim0213/BirdCLEF) / [📂 코드](https://github.com/John-Yim/BirdCLEF-2025) |
 | **민원 분류 및 정부 부처 추천 시스템** | 사용자 입력 민원 문장을 18개 카테고리로 분류하고 관련 부처 정보를 추천 | [🔗 데모](https://huggingface.co/spaces/JohnYim0213/project-note) / [📂 코드](https://github.com/John-Yim/complaint-classification) |
 | **뇌종양 MRI 분류 시스템** | 전이학습 기반 ResNet50V2 모델로 MRI 영상 분류 (정확도 99.5%) | [🔗 데모](https://huggingface.co/spaces/JohnYim0213/project-note) / [📂 코드](https://github.com/John-Yim/brain-tumor-classification) |
 
