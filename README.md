@@ -25,7 +25,7 @@
 
 ## 🛠 기술 스택
 
-| Category | Experienced With | Familiar With |
+| Category | 많이 해봤어요 | 해본 적 있어요 |
 |----------|------------------|----------------|
 | **Language** | C/C++, Python | Java, C# |
 | **Frontend** | HTML, PHP | JavaScript |
