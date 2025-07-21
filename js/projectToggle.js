@@ -36,7 +36,7 @@ function toggleSectionWithFetch(project, url) {
     w.style.order = '';
   });
   toggleButtons.forEach(btn => {
-    btn.textContent = 'View Details ▼';
+    btn.textContent = '🔍 View Details ▼';
   });
 
   if (isOpen) {
