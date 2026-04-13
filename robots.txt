@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Keep app-ads.txt crawlable when deployed at the domain root.

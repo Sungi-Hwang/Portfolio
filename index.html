@@ -1,470 +1,219 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>HwangSungi's Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html {
-      color-scheme: dark;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>황순기 | AI Engineer & Product Builder</title>
+  <meta
+    name="description"
+    content="황순기의 AI 엔지니어 포트폴리오 사이트. 경력, 대표 프로젝트, 연구, 그리고 장기 한수 같은 사이드 프로젝트를 함께 정리했습니다.">
+  <meta property="og:title" content="황순기 | AI Engineer & Product Builder">
+  <meta
+    property="og:description"
+    content="AI 엔지니어 포트폴리오, 대표 프로젝트, 연구, 그리고 장기 한수 사이드 프로젝트를 함께 정리한 사이트입니다.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans">
-  <!-- Header -->
-  <header class="bg-gray-900 shadow-md px-6 py-5">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between">
-      <h1 class="text-3xl font-bold text-teal-400">
-        <a href="https://sungi-hwang.github.io/Portfolio/" class="hover:underline">
-          Hwang Sungi's Portfolio
-        </a>
-      </h1>
-      <p class="text-sm text-gray-400 mt-2 sm:mt-0">데이터에서 가치를, AI로 해답을</p>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="max-w-6xl mx-auto px-6 py-10 space-y-12">
-    <!-- INTRO SECTION -->
-    <section class="text-center py-12 px-4">
-      <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-teal-400 mb-2">
-        HWANG SUNGI
-      </h2>
-      <p class="text-sm sm:text-base text-gray-400 max-w-xl mx-auto">
-        복잡한 현상을 데이터로 풀고, 머신러닝으로 가치를 만듭니다.
-      </p>
-    </section>
-
-    <!-- Profile + About Me 통합 카드 (2열 레이아웃) -->
-    <div class="flex flex-col sm:flex-row gap-6">
-      <!-- Profile Card (왼쪽) -->
-      <section class="bg-gray-900 rounded-2xl shadow-lg p-6 flex flex-col items-center gap-6 hover:ring-2 hover:ring-teal-500 transition w-full sm:w-1/2">
-        <!-- Profile Image -->
-        <div class="flex-shrink-0">
-          <img alt="Profile" class="w-56 h-56 rounded-full object-cover border-2 border-teal-500" src="images/profile.jpg"/>
-        </div>
-        <!-- Profile Info -->
-        <div class="text-center">
-          <h2 class="text-2xl font-semibold text-teal-300">Hwang Sungi</h2>
-          <p class="text-gray-400 text-sm mb-4">AI Engineer</p>
-          <ul class="text-sm text-gray-300 space-y-1">
-            <li><span class="font-medium text-teal-400">📧 Email:</span> sungi.hwang.work@gmail.com</li>
-            <li><span class="font-medium text-teal-400">🐱 GitHub:</span> 
-              <a class="underline hover:text-teal-300" href="https://github.com/Sungi-Hwang" target="_blank">
-                github.com/Sungi-Hwang
-              </a>
-          </ul>
-        </div>
-      </section>
-
-      <!-- About Me + Education (오른쪽) -->
-      <section class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition space-y-6 w-full sm:w-1/2">
-        <!-- About Me -->
-        <div>
-          <h2 class="text-2xl font-semibold text-teal-300 mb-3">About Me</h2>
-          <ul class="text-gray-300 leading-relaxed text-sm list-none space-y-1">
-            <li>실험과 이론을 바탕으로 복잡한 구조를 파악하고 설계하는 것을 즐깁니다..</li>
-            <li>반복되는 과정을 분석하고, 효율적으로 자동화하거나 최적하하는 데 몰입합니다.</li>
-            <li>데이터를 기반으로 문제를 정의하고, 머신러닝 모델로 실질적인 해결책을 설계하는 데 흥미를 느낍니다.</li>
-          </ul>
-        </div>
-        <!-- Education -->
-        <div class="pt-2 border-t border-gray-700">
-          <h3 class="text-xl font-semibold text-teal-300 mb-3">Education</h3>
-          <ul class="text-sm text-gray-300 space-y-2">
-            <li><span class="text-teal-400 font-medium">학교</span>: 전남대학교</li>
-            <li><span class="text-teal-400 font-medium">전공</span>: 물리학과 (양자광학 전공)</li>
-            <li><span class="text-teal-400 font-medium">학위</span>: 이학석사 (M.Sc. in Physics)</li>
-            <li><span class="text-teal-400 font-medium">학위 기간</span>: 2021.03 ~ 2023.02</li>
-
-            <li>
-              <span class="text-teal-400 font-medium">졸업논문</span>:  
-              <span class="text-gray-300">
-                Development of a transportable laser system for quantum atom gravimeter
-              </span>
-            </li>
-            
-          </ul>
-        </div>
-      </section>
-    </div>
-
-<!-- Activities -->
-<section class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition">
-  <h2 class="text-2xl font-semibold text-teal-300 mb-4">Activities</h2>
-  <ul class="list-disc list-inside text-sm text-gray-300 space-y-2">
-
-    <li>
-      <span class="text-teal-400 font-medium">나이스피앤아이 (NICE P&I), 금융공학연구소</span>  
-      — 평가엔진팀 연구원 (2023.10 ~ 2024.12)
-      <br/>
-      <span class="text-xs text-gray-400 ml-4">
-        C++ 기반 채권 평가 엔진 및 구조화 상품 가격 평가 로직 개발.  
-        Hull-White 금리 시나리오, OAS 로직, 장기 YTM 추정 모델 검증.
-      </span>
-    </li>
-
-    <li>
-      <span class="text-teal-400 font-medium">국비지원 교육</span>  
-      — 데이터 분석 기반 인공지능 시스템 개발자 양성 과정 (2025.02 ~ 2025.08)
-      <br/>
-      <span class="text-xs text-gray-400 ml-4">
-        Python, Pandas, 머신러닝, 딥러닝 모델 실습 중심 교육
-      </span>
-    </li>
-
-
-    <li>
-      <span class="text-teal-400 font-medium">일본 인턴쉽 (U &amp; I)</span>  
-      — Aisa information system에서 학점연계 인턴십으로 근무 (2019.09~2020.02)
-    </li>
-
-  </ul>
-</section>
-
-<!-- Skills -->
-<section class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition">
-  <h2 class="text-2xl font-semibold text-teal-300 mb-4">Skills</h2>
-  <div class="overflow-x-auto">
-    <table class="min-w-full table-fixed text-sm text-left text-gray-300 border-separate border-spacing-y-2">
-      <thead class="text-gray-400">
-        <tr>
-          <th class="w-40">Category</th>
-          <th>많이 해봤어요</th>
-          <th>해본 적 있어요</th>
-        </tr>
-      </thead>
-      <tbody class="text-sm">
-
-        <!-- Language -->
-        <tr>
-          <td class="font-medium text-teal-400">Language</td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gray-700 text-white px-2 py-1 rounded-md">Python</span>
-              <span class="bg-red-600 text-white px-2 py-1 rounded-md">C++</span>
-              <span class="bg-green-600 text-white px-2 py-1 rounded-md">VBA</span>
-
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-yellow-700 text-white px-2 py-1 rounded-md">SQL</span>
-              <span class="bg-blue-700 text-white px-2 py-1 rounded-md">VBA</span>
-              <span class="bg-pink-700 text-white px-2 py-1 rounded-md">C</span>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Machine Learning & AI -->
-        <tr>
-          <td class="font-medium text-teal-400">ML / AI</td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-yellow-500 text-black px-2 py-1 rounded-md">PyTorch</span>
-              <span class="bg-green-600 text-white px-2 py-1 rounded-md">scikit-learn</span>
-              <span class="bg-orange-600 text-white px-2 py-1 rounded-md">XGBoost</span>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-red-500 text-white px-2 py-1 rounded-md">TensorFlow</span>
-              <span class="bg-fuchsia-600 text-white px-2 py-1 rounded-md">Keras</span>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Data Analysis / Visualization -->
-        <tr>
-          <td class="font-medium text-teal-400">Data / Viz</td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-600 text-white px-2 py-1 rounded-md">Pandas</span>
-              <span class="bg-blue-400 text-white px-2 py-1 rounded-md">NumPy</span>
-              <span class="bg-purple-500 text-white px-2 py-1 rounded-md">Matplotlib</span>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-indigo-500 text-white px-2 py-1 rounded-md">Seaborn</span>
-              <span class="bg-teal-600 text-white px-2 py-1 rounded-md">Plotly</span>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Backend / Infra -->
-        <tr>
-          <td class="font-medium text-teal-400">Backend / Infra</td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gray-700 text-white px-2 py-1 rounded-md">Flask</span>
-              <span class="bg-gray-600 text-white px-2 py-1 rounded-md">Git / GitHub</span>
-              <span class="bg-gray-500 text-white px-2 py-1 rounded-md">Linux (Ubuntu)</span>
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-green-700 text-white px-2 py-1 rounded-md">AWS EC2</span>
-              <span class="bg-blue-700 text-white px-2 py-1 rounded-md">FastAPI</span>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Tools -->
-        <tr>
-          <td class="font-medium text-teal-400">Tools</td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gray-500 text-white px-2 py-1 rounded-md">VSCode</span>
-              <span class="bg-gray-600 text-white px-2 py-1 rounded-md">PyCharm</span>
-              <span class="bg-yellow-600 text-white px-2 py-1 rounded-md">Colab</span>
-              <span class="bg-pink-500 text-white px-2 py-1 rounded-md">Jupyter</span>
-              <span class="bg-pink-400 text-white px-2 py-1 rounded-md">Excel</span>
-
-            </div>
-          </td>
-          <td>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-500 text-white px-2 py-1 rounded-md">Postman</span>
-            </div>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-</section>
-
-    
-    <!-- Projects -->
-    <section class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition">
-      <h2 class="text-2xl font-semibold text-teal-300 mb-4">Projects</h2>
-    
-      <!-- Grid container for cards and detail blocks -->
-      <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    
-    <!-- Project 3: Last Album -->
-    <div id="card-lastalbum-wrapper" class="md:col-span-1 project-card-wrapper">
-      <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
-        <img alt="AI 앨범 제작 프로젝트" class="w-full h-80 object-cover" src="images/lastalbum.png"/>
-        <div class="p-5 space-y-2">
-          <h3 class="text-xl font-semibold text-teal-200">AI 기반 자동 앨범 제작 서비스 (Last Album)</h3>
-          <p class="text-sm text-gray-400">개발 인원: 5명(팀장) | 개발 기간: 2025.06 ~ 2025.07</p>
-          <p class="text-gray-300 text-sm">
-            사용자의 음성과 입력 키워드만으로 AI가 음악과 앨범 커버 이미지를 자동 생성해주는 웹 서비스입니다. 음성 합성(RVC), 음악 생성(YuEGP), 이미지 생성(Stable Diffusion)을 통합한 end-to-end 파이프라인을 FastAPI 기반으로 구축했습니다.
-          </p>
-  <!-- 🎵 음악 샘플 접이식 재생 -->
-  <div class="space-y-4">
-    <button
-      class="toggle-audio-btn w-full px-4 py-2 bg-teal-600 text-white font-semibold rounded-md hover:bg-teal-500 transition"
-      onclick="toggleAudioSamples()">
-      🎧 예시로 생성한 음악 보기 ▼
-    </button>
-
-    <div id="audio-sample-section" class="hidden mt-2 space-y-4">
-      <!-- 음악 1 -->
-      <div>
-        <p class="text-sm text-gray-400">🎵 강수진 – 눈코입</p>
-        <audio controls class="w-full rounded-md">
-          <source src="others/face_namdil.wav" type="audio/mpeg">
-          브라우저가 오디오를 지원하지 않습니다.
-        </audio>
-      </div>
-
-      <!-- 음악 2 -->
-      <div>
-        <p class="text-sm text-gray-400">🎵 메가트론 – fantastic baby</p>
-        <audio controls class="w-full rounded-md">
-          <source src="others/fantastic_megatron.wav" type="audio/mpeg">
-          브라우저가 오디오를 지원하지 않습니다.
-        </audio>
-      </div>
-
-      <!-- 음악 3 -->
-      <div>
-        <p class="text-sm text-gray-400">🎵 스타크래프트 메딕 – Next Level</p>
-        <audio controls class="w-full rounded-md">
-          <source src="others/medic_NextLevel_vocal.wav" type="audio/mpeg">
-          브라우저가 오디오를 지원하지 않습니다.
-        </audio>
-      </div>
-    </div>
-  </div>
-
-  <!-- 스크립트 추가 -->
-  <script>
-    function toggleAudioSamples() {
-      const section = document.getElementById('audio-sample-section');
-      const btn = document.querySelector('.toggle-audio-btn');
-      const isHidden = section.classList.contains('hidden');
-      
-      section.classList.toggle('hidden');
-
-      // 버튼 텍스트 변경
-      btn.innerHTML = isHidden 
-        ? '🎧 예시로 생성한 음악 접기 ▲' 
-        : '🎧 예시로 생성한 음악 보기 ▼';
-    }
-  </script>
-          <!-- ⬇️ PPT 다운로드 -->
-          <div class="mt-6">
-            <a href="files/Lastalbum.pptx" download
-            class="w-full block px-4 py-2 bg-teal-600 hover:bg-teal-500 text-white rounded-lg font-semibold shadow-md text-center">
-            ⬇️ 자세한 발표자료 다운로드 (PPTX)
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-      <!-- Project 2: Car Classification -->
-      <div id="card-car-wrapper" class="md:col-span-1 project-card-wrapper">
-        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
-          <img alt="차량 이미지 분류 프로젝트" class="w-full h-80 object-cover" src="images/car_class.png"/>
-          <div class="p-5 space-y-2">
-            <h3 class="text-xl font-semibold text-teal-200">Dacon 차량 이미지 분류 경진대회</h3>
-            <p class="text-sm text-gray-400">1인 개발 | 개발 기간: 2025.04 ~ 2025.06</p>
-            <p class="text-gray-300 text-sm">
-              EfficientNet-B5 기반 백본에 Teacher-Student 구조와 메타 피처(색상, 종횡비)를 결합한 앙상블 분류 모델 설계.  
-              Knowledge Distillation, 2-Stage 학습, Class-balanced Focal Loss 등의 전략을 활용해  
-              Private Leaderboard 기준 상위 7% 달성.(88/748)
-            </p>
-
-            <div class="text-center mt-4">
-              <a href="https://github.com/Sungi-Hwang/Carclassification#readme"
-                class="px-4 py-2 text-sm font-bold text-black bg-cyan-300 hover:bg-cyan-200 rounded-full shadow-md text-center block"
-                target="_blank">🔍 View Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div id="section-llm"
-             class="project-section hidden bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed md:col-span-2">
-          <div id="content-llm">Loading...</div>
-          <div class="text-right mt-4">
-            <button class="toggle-btn text-teal-400 hover:underline"
-                    data-project="llm"
-                    onclick="toggleSectionWithFetch('llm')">
-              Close ▲
-            </button>
-          </div>
-        </div>
-    
-
-        <!-- Project 1: BirdCLEF -->
-        <div id="card-birdclef-wrapper" class="md:col-span-1 project-card-wrapper">
-          <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
-            <img alt="캐글 컴페티션" class="w-full h-80 object-cover" src="images/basketball.png"/>
-            <div class="p-5 space-y-2">
-              <h3 class="text-xl font-semibold text-teal-200">Kaggle Competition March Machine Learning Mania 2025</h3>
-              <p class="text-sm text-gray-400">1인 팀 참가 | 개발기간: 2025.03 ~ 2025.04</p>
-              <p class="text-gray-300 text-sm">
-                NCAA 농구 토너먼트 결과 예측을 위해 확률 기반 favorite-first 전략, spline 보정, confidence clipping 등 다양한 후처리 기법을 적용하여 <strong class="text-teal-300">총 1,727팀 중 393위</strong> 달성.
-              </p>
-              <div class="text-center mt-4">
-                <a href="https://github.com/Sungi-Hwang/kaggle-march-madness-2025#readme"
-                    class="px-4 py-2 text-sm font-bold text-black bg-cyan-300 hover:bg-cyan-200 rounded-full shadow-md text-center block"
-                    target="_blank">🔍 View Details</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="section-birdclef"
-              class="project-section hidden bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed md:col-span-2">
-          <div id="content-birdclef">Loading...</div>
-          <div class="text-right mt-4">
-            <button class="toggle-btn text-teal-400 hover:underline"
-                    data-project="birdclef"
-                    onclick="toggleSectionWithFetch('birdclef')">
-              Close ▲
-            </button>
-          </div>
-        </div>
-        <div id="section-tumor"
-             class="project-section hidden bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed md:col-span-2">
-          <div id="content-tumor">Loading...</div>
-          <div class="text-right mt-4">
-            <button class="toggle-btn text-teal-400 hover:underline"
-                    data-project="tumor"
-                    onclick="toggleSectionWithFetch('tumor')">
-              Close ▲
-            </button>
-          </div>
-        </div>
-    
-      </div>
-    </section>
-
-  <!-- Research & Publications -->
-  <section class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition">
-    <h2 class="text-2xl font-semibold text-teal-300 mb-4">Research & Publications</h2>
-    <ul class="list-disc list-inside text-sm text-gray-300 space-y-3">
-      
-      <li>
-        <span class="text-white font-semibold">[SCI 논문]</span><br/>
-        "Dynamic polarization response of polarization-maintaining fibers by periodic thermal cycling method"<br/>
-        <em>AIP Publising</em>
-        제1저자 – 능동적 열 변화를 통한 편광 안정화 시스템 구축
-        (<a class="text-teal-400 underline hover:text-teal-200"
-            href="https://doi.org/10.1063/5.0096096" target="_blank">
-          논문 보기
-        </a>)
-      </li>
-
-      <li>
-        <span class="text-white font-semibold">[SCI 논문]</span><br/>
-        "Characterization of optical phase-locked two distributed-feedback fiber lasers for 87Rb atom interferometry"<br/>
-        <em>Current Applied Physics</em>
-        공동저자 – 위상 잡음 제거 레이저 시스템 구축
-        (<a class="text-teal-400 underline hover:text-teal-200"
-        href="https://doi.org/10.1016/j.cap.2023.04.019" target="_blank">
-      논문 보기
-        </a>)
-      </li>
-
-      <li>
-        <span class="text-white font-semibold">[SCI 논문]</span><br/>
-        "Theoretical and Experimental Study of Optimization of Polarization Spectroscopy for the D₂ Closed Transition Line of 87Rb Atoms"<br/>
-        <em>Applied sciences</em>
-        (<a class="text-teal-400 underline hover:text-teal-200"
-        href="https://doi.org/10.3390/app11167219" target="_blank">
-      논문 보기
-        </a>)
-        공동저자 – 편광 분광의 최적화 이론 및 실험 연구
-      </li>
-      
-    </ul>
-  </section>
-
-    <!-- Certificates -->
-    <section class="bg-gray-900 rounded-2xl shadow-lg p-6 hover:ring-2 hover:ring-teal-500 transition">
-      <h2 class="text-2xl font-semibold text-teal-300 mb-4">Certificates</h2>
-      <ul class="list-disc list-inside text-sm text-gray-300 space-y-2">
-        <li>
-          <span class="font-medium text-teal-400">투자자산운용사</span>
-          <br/>
-          <span class="text-xs text-gray-400 ml-4">
-            – 취득: 2024.11 | 발급기관: 금융투자협회 
-        </li>
-        <li>
-          <span class="font-medium text-teal-400">JLPT N2</span>
-          <br/>
-          <span class="text-xs text-gray-400 ml-4">
-            – 취득: 2019.09 | 발급기관: 일본국제교류기금
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top">
+          <span class="brand-mark">HS</span>
+          <span class="brand-copy">
+            <strong id="brand-name">황순기</strong>
+            <small>AI Engineer · Product Builder</small>
           </span>
-        </li>
-      </ul>
-    </section>
-  </main>
+        </a>
+        <nav class="nav">
+          <a href="#experience">경력</a>
+          <a href="#projects">프로젝트</a>
+          <a href="#side-projects">사이드 프로젝트</a>
+          <a href="#research">연구</a>
+          <a href="#contact">연락</a>
+        </nav>
+      </div>
+    </header>
 
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-500 py-6">
-    © 2025 Hwang Sungi. All rights reserved.
-  </footer>
+    <main>
+      <section class="section hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Engineer · Applied ML · System Design</p>
+          <h1 class="hero-title" id="hero-title"></h1>
+          <p class="hero-summary" id="hero-summary"></p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="#experience">경력 보기</a>
+            <a class="button button--ghost" href="#side-projects">사이드 프로젝트 보기</a>
+          </div>
+          <ul class="proof-list" id="proof-list"></ul>
+        </div>
 
-  <!-- JS -->
-  <script src="js/projectToggle.js"></script>
+        <aside class="hero-panel">
+          <div class="hero-panel__header">
+            <p class="panel-label">Professional Focus</p>
+            <h2>문제를 모델에서 끝내지 않고 운영 가능한 시스템까지 연결합니다.</h2>
+          </div>
+
+          <div class="hero-panel__grid">
+            <article class="metric-card">
+              <span class="metric-card__value">LLM</span>
+              <span class="metric-card__label">Applied AI</span>
+              <p>RAG, NER, 이상탐지처럼 실무형 AI 문제를 시스템 단위로 다뤄왔습니다.</p>
+            </article>
+            <article class="metric-card">
+              <span class="metric-card__value">C++</span>
+              <span class="metric-card__label">Engine Logic</span>
+              <p>금융 평가 엔진 개발 경험으로 정밀도와 운영 안정성을 함께 챙겨왔습니다.</p>
+            </article>
+            <article class="metric-card">
+              <span class="metric-card__value">Flow</span>
+              <span class="metric-card__label">End-to-End</span>
+              <p>데이터 파이프라인, 모델, 검증, 서비스 연결까지 한 흐름으로 보는 편입니다.</p>
+            </article>
+            <article class="metric-card">
+              <span class="metric-card__value">Build</span>
+              <span class="metric-card__label">Side Projects</span>
+              <p>사이드 프로젝트에서도 기능보다 신뢰도와 완성도를 먼저 정리하는 편입니다.</p>
+            </article>
+          </div>
+
+          <p class="hero-note">
+            이 사이트는 AI 엔지니어링 경력과 대표 프로젝트를 중심으로 구성했고, 장기 한수는 별도 사이드 프로젝트 챕터에서 정리했습니다.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section" id="site-roles">
+        <div class="section-heading">
+          <p class="section-kicker">Site Strategy</p>
+          <h2>한 사이트가 다섯 역할을 하도록 설계했습니다.</h2>
+          <p>
+            이번 구조는 자기소개를 넘어서 개발자 웹사이트, 대표 포트폴리오, 사이드 프로젝트 소개, 정책 URL, 광고 운영 준비까지
+            하나의 흐름으로 연결되도록 설계했습니다.
+          </p>
+        </div>
+        <div class="card-grid card-grid--4" id="roles-grid"></div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-heading">
+          <p class="section-kicker">Experience</p>
+          <h2>연구, 금융 엔진, AI 솔루션, 개인 제품 개발을 하나의 흐름으로 연결해 왔습니다.</h2>
+          <p>
+            제 강점은 모델 성능만 보는 것이 아니라, 데이터 구조와 운영 기준을 함께 설계해서 실제로 작동하는 시스템으로
+            끝까지 밀어붙이는 데 있습니다.
+          </p>
+        </div>
+        <div class="timeline" id="experience-list"></div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-heading">
+          <p class="section-kicker">Selected Projects</p>
+          <h2>제품과 실험을 연결한 대표 작업들</h2>
+          <p>
+            공개 가능한 범위 안에서, 모델링 자체보다 구현과 검증 흐름이 보이는 프로젝트 위주로 정리했습니다.
+          </p>
+        </div>
+        <div class="project-grid" id="project-grid"></div>
+      </section>
+
+      <section class="section" id="side-projects">
+        <div class="section-heading">
+          <p class="section-kicker">Side Projects</p>
+          <h2 id="product-title"></h2>
+          <p id="product-summary"></p>
+        </div>
+
+        <div class="overview-layout">
+          <div class="surface-card">
+            <div class="chip-list" id="product-chips"></div>
+            <div class="detail-grid">
+              <article class="sub-card">
+                <h3>어떤 앱인지</h3>
+                <ul class="feature-list" id="updates-list"></ul>
+              </article>
+              <article class="sub-card">
+                <h3>차이점</h3>
+                <ul class="feature-list" id="features-list"></ul>
+              </article>
+            </div>
+          </div>
+
+          <aside class="priority-card">
+            <p class="panel-label">Current Status</p>
+            <h3>현재는 기능 확장보다 판정 정리와 출시 준비를 먼저 진행하고 있습니다.</h3>
+            <ul class="feature-list" id="priority-list"></ul>
+            <div class="stack-links">
+              <a class="text-link" href="privacy.html">Privacy Policy</a>
+              <a class="text-link" href="app-ads.txt">app-ads.txt Template</a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="section-heading section-heading--compact">
+          <p class="section-kicker">Janggi Hansu</p>
+          <h2>최근 정리한 내용</h2>
+          <p>
+            퍼즐 판정, 진행 기록, 광고 준비처럼 실제 사용성과 운영에 연결되는 부분을 먼저 다듬었습니다.
+          </p>
+        </div>
+        <div class="card-grid card-grid--3" id="case-study-grid"></div>
+
+        <div class="section-heading section-heading--compact">
+          <p class="section-kicker">Release Readiness</p>
+          <h2>운영 전 체크 포인트도 이 챕터 안에서 함께 관리합니다.</h2>
+          <p>
+            privacy 페이지, app-ads.txt, 테스트 광고, 설명 가능한 변경 포인트를 한 섹션 안에서 묶어 추후 운영 전환이 쉽도록 했습니다.
+          </p>
+        </div>
+        <div class="card-grid card-grid--4" id="readiness-grid"></div>
+      </section>
+
+      <section class="section" id="research">
+        <div class="section-heading">
+          <p class="section-kicker">Research & Publications</p>
+          <h2>문제를 수치와 구조로 보는 감각은 연구에서 시작되었습니다.</h2>
+          <p>
+            물리학 연구와 실험 시스템 설계 경험은 이후 금융 엔진과 AI 시스템 구현에서도 같은 방식의 사고를 유지하게 해줬습니다.
+          </p>
+        </div>
+        <div class="paper-stack" id="paper-list"></div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="contact-card">
+          <div class="contact-copy">
+            <p class="section-kicker">Contact</p>
+            <h2>문제를 분석에서 끝내지 않고 제품과 시스템으로 완성하는 일을 합니다.</h2>
+            <p id="contact-copy"></p>
+          </div>
+          <div class="contact-side">
+            <img class="profile-photo" src="images/profile.jpg" alt="황순기 프로필 사진">
+            <div class="contact-links" id="contact-links"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 Sungi Hwang. Built as a reusable developer site + app landing + policy-ready static site.</p>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="app-ads.txt">app-ads.txt</a>
+          <a href="https://github.com/Sungi-Hwang" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/site-data.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
