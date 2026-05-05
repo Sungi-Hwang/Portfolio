@@ -1,7 +1,1 @@
-# app-ads.txt template for the developer website.
-# Replace the sample line below with your own Google AdMob publisher ID before production.
-# Format: google.com, pub-################, DIRECT, f08c47fec0942fa0
-# Do not use the app ID (ca-app-pub-...) here.
-#
-# Example:
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-5593224479644015, DIRECT, f08c47fec0942fa0
